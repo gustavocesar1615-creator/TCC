@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechNews: portal informativo de tecnologia, inteligência artificial e inovação." />
+  <title>TechNews | Tecnologia em foco</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#inicio" class="logo" aria-label="TechNews, início"><span class="logo-mark">T<span>+</span></span> Tech<span>News</span></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a><a href="#noticias">Notícias</a><a href="#categorias">Categorias</a><a href="#sobre">Sobre</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">☾</button>
+    </div>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> SEU PORTAL DE TECNOLOGIA</div><h1>O futuro acontece <em>agora.</em></h1><p>Descubra tendências, inovações e ideias que estão transformando o mundo digital.</p><a href="#noticias" class="primary-btn">Explorar notícias <span>↗</span></a><div class="hero-stats"><div><strong>04</strong><small>Temas em destaque</small></div><div><strong>100%</strong><small>Conteúdo informativo</small></div></div></div>
+        <div class="hero-visual" role="img" aria-label="Ilustração abstrata de um planeta digital com órbitas"><div class="orbital orbit-one"></div><div class="orbital orbit-two"></div><div class="planet"><div class="planet-inner">✦</div></div><div class="floating-tag tag-top">✧ Inteligência artificial</div><div class="floating-tag tag-bottom">⌘ Mundo conectado</div><div class="glow"></div></div>
+      </div>
+    </section>
+    <section class="news-section container" id="noticias"><div class="section-heading"><div><span class="kicker">FIQUE POR DENTRO</span><h2>Últimas <span>notícias</span></h2><p>Explore conteúdos introdutórios sobre o universo da tecnologia.</p></div><label class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar assunto..." aria-label="Buscar notícias" /></label></div>
+      <div id="categorias" class="filters" aria-label="Filtrar por categoria"><button class="filter active" data-category="Todas">Todas</button><button class="filter" data-category="Inteligência Artificial">Inteligência Artificial</button><button class="filter" data-category="Segurança">Segurança</button><button class="filter" data-category="Inovação">Inovação</button><button class="filter" data-category="Games">Games</button></div>
+      <div id="newsGrid" class="news-grid"></div><p id="emptyState" class="empty-state" hidden>Nenhuma notícia encontrada. Tente outro termo.</p>
+    </section>
+    <section class="newsletter"><div class="container newsletter-inner"><div><span class="kicker">NÃO PERCA NADA</span><h2>Tecnologia para quem quer ir além.</h2><p>Receba uma mensagem de demonstração ao cadastrar seu e-mail.</p></div><form id="newsletterForm"><label for="email" class="sr-only">Seu e-mail</label><input id="email" type="email" placeholder="Seu melhor e-mail" required /><button type="submit">Inscrever-se →</button><p id="formMessage" role="status"></p></form></div></section>
+    <section class="about container" id="sobre"><span class="kicker">SOBRE O PROJETO</span><h2>Informação que conecta.</h2><p>O TechNews é um protótipo de portal informativo desenvolvido para um Trabalho de Conclusão de Curso (TCC). Os artigos são exemplos educativos e não representam notícias verificadas em tempo real.</p></section>
+  </main>
+  <footer><div class="container footer-inner"><a href="#inicio" class="logo">Tech<span>News</span></a><p>© <span id="year"></span> TechNews • Projeto acadêmico</p><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

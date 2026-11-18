@@ -1,16 +1,66 @@
-const articles = [
-  {category:'Inteligência Artificial',title:'Como a inteligência artificial está mudando o cotidiano',description:'Entenda como ferramentas inteligentes ajudam nos estudos, no trabalho e em tarefas do dia a dia.',icon:'✦',background:'linear-gradient(135deg,#192e83,#548aff)',reading:'5 min de leitura',slug:'inteligencia-artificial',anchor:'secao-2'},
-  {category:'Segurança',title:'5 cuidados essenciais para proteger seus dados online',description:'Senhas fortes, autenticação em duas etapas e outros hábitos importantes para navegar com segurança.',icon:'🛡️',background:'linear-gradient(135deg,#093d58,#21b6bb)',reading:'4 min de leitura',slug:'seguranca',anchor:'secao-1'},
-  {category:'Inovação',title:'O que é computação quântica e por que ela importa?',description:'Uma introdução acessível a uma das áreas mais interessantes da pesquisa em computação.',icon:'⚛',background:'linear-gradient(135deg,#52257c,#b274ed)',reading:'6 min de leitura',slug:'inovacao',anchor:'secao-1'},
-  {category:'Games',title:'Como os videogames evoluíram ao longo das décadas',description:'Dos primeiros consoles aos mundos virtuais modernos: conheça essa trajetória tecnológica.',icon:'🎮',background:'linear-gradient(135deg,#a63a56,#fa9b73)',reading:'5 min de leitura',slug:'games',anchor:'secao-1'},
-  {category:'Inteligência Artificial',title:'IA generativa: o que é e como funciona?',description:'Conheça os conceitos por trás das ferramentas capazes de criar textos, imagens e códigos.',icon:'◈',background:'linear-gradient(135deg,#153a80,#36b1d9)',reading:'7 min de leitura',slug:'inteligencia-artificial',anchor:'secao-3'},
-  {category:'Inovação',title:'Cidades inteligentes: tecnologia para melhorar a vida',description:'Saiba como sensores, dados e conectividade podem transformar os serviços urbanos.',icon:'⌁',background:'linear-gradient(135deg,#285b41,#68cda1)',reading:'4 min de leitura',slug:'inovacao',anchor:'secao-3'}
-];
-const grid=document.getElementById('newsGrid');
-const search=document.getElementById('searchInput');
-const filters=[...document.querySelectorAll('.filter')];
-let category='Todas';
-function render(){const term=search.value.trim().toLocaleLowerCase('pt-BR');const visible=articles.filter(a=>(category==='Todas'||a.category===category)&&`${a.title} ${a.description} ${a.category}`.toLocaleLowerCase('pt-BR').includes(term));grid.innerHTML='';for(const a of visible){const card=document.createElement('article');card.className='news-card';card.innerHTML=`<div class="card-art" style="background:${a.background}"><span aria-hidden="true">${a.icon}</span></div><div class="card-body"><span class="category-label">${a.category}</span><h3>${a.title}</h3><p>${a.description}</p><div class="card-bottom"><span>${a.reading}</span><a class="read-link" href="${a.slug}.html#${a.anchor}">Saiba mais ↗</a></div></div>`;grid.appendChild(card)}document.getElementById('emptyState').hidden=visible.length!==0}
-filters.forEach(btn=>btn.addEventListener('click',()=>{category=btn.dataset.category;filters.forEach(b=>b.classList.toggle('active',b===btn));render()}));search.addEventListener('input',render);
-const themeButton=document.getElementById('themeToggle');function applyTheme(dark){document.body.classList.toggle('dark',dark);themeButton.textContent=dark?'☀':'☾';themeButton.setAttribute('aria-label',dark?'Ativar tema claro':'Ativar tema escuro')}applyTheme(localStorage.getItem('technews-theme')==='dark');themeButton.addEventListener('click',()=>{const dark=!document.body.classList.contains('dark');applyTheme(dark);localStorage.setItem('technews-theme',dark?'dark':'light')});
-document.getElementById('newsletterForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('formMessage').textContent='Inscrição de demonstração realizada! Nenhum e-mail foi enviado.';e.target.reset()});document.getElementById('year').textContent=new Date().getFullYear();render();
+// Dicas curtas, fáceis de editar e entender.
+const dicas = {
+  fortnite: {
+    titulo: 'Dicas de Fortnite',
+    itens: [
+      'Antes de entrar em partidas difíceis, treine sua movimentação no modo Criativo.',
+      'Observe a tempestade e tente se posicionar com antecedência.',
+      'Se você joga com amigos, combine quem vai marcar os lugares no mapa.',
+      'Teste as configurações de controle e encontre uma sensibilidade confortável.'
+    ]
+  },
+  godofwar: {
+    titulo: 'Dicas de God of War',
+    itens: [
+      'Explore os caminhos secundários para encontrar baús e itens úteis.',
+      'Leia as descrições das habilidades antes de gastar seus pontos.',
+      'Preste atenção aos movimentos dos chefes e aprenda o momento certo de se esquivar.',
+      'Volte a áreas antigas quando liberar novas habilidades.'
+    ]
+  },
+  rdr2: {
+    titulo: 'Dicas de Red Dead Redemption 2',
+    itens: [
+      'Não tenha pressa de terminar a história: converse com os personagens do acampamento.',
+      'Cuide do seu cavalo e fortaleça o vínculo durante as viagens.',
+      'Explore as cidades e aceite missões secundárias quando aparecerem.',
+      'Use o mapa para planejar suas viagens pelo mundo aberto.'
+    ]
+  },
+  thelastofus: {
+    titulo: 'Dicas de The Last of Us',
+    itens: [
+      'Examine bem cada ambiente para encontrar objetos e pistas.',
+      'Aproveite os momentos tranquilos para conhecer melhor os personagens.',
+      'Observe os caminhos alternativos antes de avançar.',
+      'Se uma parte estiver difícil, ajuste a dificuldade para curtir a história.'
+    ]
+  }
+};
+
+const painel = document.getElementById('painel-dicas');
+const titulo = document.getElementById('titulo-dicas');
+const lista = document.getElementById('lista-dicas');
+const botoes = document.querySelectorAll('.ver-dicas');
+
+botoes.forEach(botao => {
+  botao.addEventListener('click', () => {
+    const jogo = dicas[botao.dataset.game];
+    titulo.textContent = jogo.titulo;
+    lista.replaceChildren();
+    jogo.itens.forEach(texto => {
+      const item = document.createElement('li');
+      item.textContent = texto;
+      lista.appendChild(item);
+    });
+    botoes.forEach(b => b.setAttribute('aria-expanded', b === botao ? 'true' : 'false'));
+    painel.hidden = false;
+    painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+});
+
+document.getElementById('fechar-dicas').addEventListener('click', () => {
+  painel.hidden = true;
+  botoes.forEach(botao => botao.setAttribute('aria-expanded', 'false'));
+});
+document.getElementById('ano').textContent = new Date().getFullYear();

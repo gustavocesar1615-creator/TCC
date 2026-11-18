@@ -1,0 +1,53 @@
+name: Importar imagens do GameTips
+on:
+  push:
+    paths:
+      - '.github/workflows/importar-imagens.yml'
+permissions:
+  contents: write
+jobs:
+  imagens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Baixar capturas de tela dos jogos
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          baixar() {
+            destino="$1"; shift
+            for endereco in "$@"; do
+              echo "Tentando baixar $destino"
+              if curl -fLsS --max-time 45 --retry 2 -A 'Mozilla/5.0' -o "$destino" "$endereco"; then
+                if [ "$(wc -c < "$destino")" -gt 12000 ] && file --mime-type "$destino" | grep -qE 'image/jpeg|image/png|image/webp'; then
+                  echo "Imagem salva: $destino"
+                  return 0
+                fi
+              fi
+            done
+            rm -f "$destino"
+            echo "::warning::Não foi possível baixar $destino"
+            return 0
+          }
+          baixar assets/fortnite.jpg \
+            'https://staticg.sportskeeda.com/editor/2021/11/f4d11-16377550139395-1920.jpg' \
+            'https://staticg.sportskeeda.com/editor/2025/02/e56db-17401349716135-1920.jpg'
+          baixar assets/god-of-war.jpg \
+            'https://www.techspot.com/images2/news/bigimage/2024/05/2024-05-13-image-3.jpg' \
+            'https://cdn.mos.cms.futurecdn.net/Cj5FBi89UX4fTJ9fnapTEh.jpg'
+          baixar assets/the-last-of-us.jpg \
+            'https://images.pushsquare.com/screenshots/127129/large.jpg' \
+            'https://gamegpu.com/images/1_2025/NEWS/q2/f123/The_Last_of_Us_Part_I.jpeg'
+      - name: Salvar imagens no repositório
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          if ! git diff --cached --quiet; then
+            git commit -m "Adiciona imagens locais dos jogos ao GameTips"
+            git push origin HEAD:main
+          fi

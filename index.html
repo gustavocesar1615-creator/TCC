@@ -1,38 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TechNews: portal informativo de tecnologia, inteligência artificial e inovação." />
-  <title>TechNews | Tecnologia em foco</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameTips: dicas rápidas de Fortnite e jogos de campanha.">
+  <title>GameTips | Dicas de jogos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-content">
-      <a href="#inicio" class="logo" aria-label="TechNews, início"><span class="logo-mark">T<span>+</span></span> Tech<span>News</span></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="#inicio">Início</a><a href="#noticias">Notícias</a><a href="#categorias">Categorias</a><a href="linha-do-tempo.html">Linha do tempo</a><a href="glossario.html">Glossário</a><a href="#sobre">Sobre</a>
+  <header class="topo">
+    <div class="container menu">
+      <a class="logo" href="#inicio">🎮 GameTips</a>
+      <nav aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#fortnite">Fortnite</a>
+        <a href="#campanha">Campanha</a>
+        <a href="#sobre">Sobre</a>
       </nav>
-      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">☾</button>
     </div>
   </header>
-  <main id="inicio">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> SEU PORTAL DE TECNOLOGIA</div><h1>O futuro acontece <em>agora.</em></h1><p>Descubra tendências, inovações e ideias que estão transformando o mundo digital.</p><a href="#noticias" class="primary-btn">Explorar notícias <span>↗</span></a><div class="hero-stats"><div><strong>04</strong><small>Temas em destaque</small></div><div><strong>100%</strong><small>Conteúdo informativo</small></div></div></div>
-        <div class="hero-visual" role="img" aria-label="Ilustração abstrata de um planeta digital com órbitas"><div class="orbital orbit-one"></div><div class="orbital orbit-two"></div><div class="planet"><div class="planet-inner">✦</div></div><div class="floating-tag tag-top">✧ Inteligência artificial</div><div class="floating-tag tag-bottom">⌘ Mundo conectado</div><div class="glow"></div></div>
+
+  <main id="inicio" class="container">
+    <section class="apresentacao">
+      <p class="destaque">DICAS PARA QUEM CURTE JOGAR</p>
+      <h1>Bem-vindo ao GameTips</h1>
+      <p>Um cantinho com dicas de Fortnite e de alguns jogos de campanha. Sem enrolação, só o básico para aproveitar melhor cada jogo.</p>
+      <a class="botao" href="#jogos">Ver as dicas</a>
+    </section>
+
+    <section id="jogos" class="jogos">
+      <div class="secao-titulo">
+        <h2>Escolha um jogo</h2>
+        <p>Clique em um card para ver as dicas.</p>
       </div>
+      <div class="cards">
+        <article class="card" id="fortnite">
+          <div class="capa fortnite" aria-hidden="true">🎯</div>
+          <div class="card-texto">
+            <span class="tipo">Multiplayer</span>
+            <h3>Fortnite</h3>
+            <p>Construção, movimentação e dicas para as partidas.</p>
+            <button class="ver-dicas" data-game="fortnite" aria-expanded="false">Ver dicas</button>
+          </div>
+        </article>
+        <article class="card" id="campanha">
+          <div class="capa godofwar" aria-hidden="true">🪓</div>
+          <div class="card-texto">
+            <span class="tipo">Campanha</span>
+            <h3>God of War</h3>
+            <p>Exploração, habilidades e desafios da história.</p>
+            <button class="ver-dicas" data-game="godofwar" aria-expanded="false">Ver dicas</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="capa rdr2" aria-hidden="true">🐎</div>
+          <div class="card-texto">
+            <span class="tipo">Campanha</span>
+            <h3>Red Dead Redemption 2</h3>
+            <p>O que fazer para aproveitar o mundo aberto.</p>
+            <button class="ver-dicas" data-game="rdr2" aria-expanded="false">Ver dicas</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="capa thelastofus" aria-hidden="true">🌿</div>
+          <div class="card-texto">
+            <span class="tipo">Campanha</span>
+            <h3>The Last of Us</h3>
+            <p>Exploração e atenção aos detalhes das fases.</p>
+            <button class="ver-dicas" data-game="thelastofus" aria-expanded="false">Ver dicas</button>
+          </div>
+        </article>
+      </div>
+      <section id="painel-dicas" class="painel-dicas" hidden tabindex="-1" aria-live="polite">
+        <div class="painel-topo"><h2 id="titulo-dicas">Dicas</h2><button id="fechar-dicas" aria-label="Fechar dicas">×</button></div>
+        <ul id="lista-dicas"></ul>
+      </section>
     </section>
-    <section class="news-section container" id="noticias"><div class="section-heading"><div><span class="kicker">FIQUE POR DENTRO</span><h2>Últimas <span>notícias</span></h2><p>Explore conteúdos introdutórios sobre o universo da tecnologia.</p></div><label class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar assunto..." aria-label="Buscar notícias" /></label></div>
-      <div id="categorias" class="filters" aria-label="Filtrar por categoria"><button class="filter active" data-category="Todas">Todas</button><button class="filter" data-category="Inteligência Artificial">Inteligência Artificial</button><button class="filter" data-category="Segurança">Segurança</button><button class="filter" data-category="Inovação">Inovação</button><button class="filter" data-category="Games">Games</button></div>
-      <div id="newsGrid" class="news-grid"></div><p id="emptyState" class="empty-state" hidden>Nenhuma notícia encontrada. Tente outro termo.</p>
+
+    <section class="sobre" id="sobre">
+      <h2>Sobre o projeto</h2>
+      <p>O GameTips é um site informativo criado para um Trabalho de Conclusão de Curso (TCC). A ideia é compartilhar dicas simples sobre jogos que muita gente conhece.</p>
     </section>
-    <section class="learning-section container" id="explorar"><div class="learning-heading"><span class="kicker">APRENDA MAIS</span><h2>Explore a <span>tecnologia</span></h2><p>Conheça momentos históricos e entenda palavras que fazem parte do mundo digital.</p></div><div class="learning-grid"><a class="learning-card" href="linha-do-tempo.html"><div class="learning-icon" aria-hidden="true">🕒</div><h3>Linha do tempo</h3><p>Uma viagem interativa pelos marcos que transformaram a computação, a internet e a inteligência artificial.</p><strong>Explorar história ↗</strong></a><a class="learning-card" href="glossario.html"><div class="learning-icon" aria-hidden="true">📖</div><h3>Glossário tecnológico</h3><p>Aprenda termos de programação, segurança, inovação e internet com explicações simples e exemplos.</p><strong>Descobrir conceitos ↗</strong></a></div></section>
-    <section class="newsletter"><div class="container newsletter-inner"><div><span class="kicker">NÃO PERCA NADA</span><h2>Tecnologia para quem quer ir além.</h2><p>Receba uma mensagem de demonstração ao cadastrar seu e-mail.</p></div><form id="newsletterForm"><label for="email" class="sr-only">Seu e-mail</label><input id="email" type="email" placeholder="Seu melhor e-mail" required /><button type="submit">Inscrever-se →</button><p id="formMessage" role="status"></p></form></div></section>
-    <section class="about container" id="sobre"><span class="kicker">SOBRE O PROJETO</span><h2>Informação que conecta.</h2><p>O TechNews é um protótipo de portal informativo desenvolvido para um Trabalho de Conclusão de Curso (TCC). Os artigos são exemplos educativos e não representam notícias verificadas em tempo real.</p></section>
   </main>
-  <footer><div class="container footer-inner"><a href="#inicio" class="logo">Tech<span>News</span></a><p>© <span id="year"></span> TechNews • Projeto acadêmico</p><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+
+  <footer><div class="container">GameTips • Projeto de TCC • <span id="ano"></span></div></footer>
   <script src="script.js"></script>
 </body>
 </html>

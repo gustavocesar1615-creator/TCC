@@ -59,3 +59,13 @@ footer { background: #1b202a; border-top: 1px solid var(--borda); padding: 25px 
 /* Imagem do card de Red Dead Redemption 2 */
 .capa-imagem { height: 145px; overflow: hidden; background: #87503d; }
 .capa-imagem img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Capas com as mesmas dimensões, independentemente do tamanho da foto */
+.cards { align-items: stretch; }
+.card { display: flex; flex-direction: column; min-width: 0; }
+.capa-imagem { display: block; width: 100%; height: 215px; flex: 0 0 215px; overflow: hidden; }
+.capa-imagem img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; max-width: none; }
+.card-texto { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.card-texto p { min-height: 0; margin-bottom: 20px; }
+.card-texto .ver-dicas { margin-top: auto; }
+@media (max-width: 650px) { .capa-imagem { height: 190px; flex-basis: 190px; } }

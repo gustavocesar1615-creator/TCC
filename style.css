@@ -69,3 +69,11 @@ footer { background: #1b202a; border-top: 1px solid var(--borda); padding: 25px 
 .card-texto p { min-height: 0; margin-bottom: 20px; }
 .card-texto .ver-dicas { margin-top: auto; }
 @media (max-width: 650px) { .capa-imagem { height: 190px; flex-basis: 190px; } }
+
+/* Ajuste das fotos do Red Dead e God of War */
+.card { display: flex; flex-direction: column; }
+.capa-imagem { position: relative; width: 100%; height: auto; aspect-ratio: 16 / 9; flex: 0 0 auto; overflow: hidden; }
+.capa-imagem > img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center; display: block; }
+.capa-red-dead > img { object-position: center center; }
+.card-texto { flex: 1; display: flex; flex-direction: column; }
+.card-texto .ver-dicas { margin-top: auto; align-self: flex-start; }

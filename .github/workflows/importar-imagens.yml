@@ -1,8 +1,9 @@
-name: Importar imagens do GameTips
+name: Importar capas do GameTips
 on:
   push:
     paths:
       - '.github/workflows/importar-imagens.yml'
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -12,42 +13,76 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Baixar capturas de tela dos jogos
+      - name: Baixar capas da Steam para assets
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p assets
           baixar() {
-            destino="$1"; shift
-            for endereco in "$@"; do
-              echo "Tentando baixar $destino"
-              if curl -fLsS --max-time 45 --retry 2 -A 'Mozilla/5.0' -o "$destino" "$endereco"; then
-                if [ "$(wc -c < "$destino")" -gt 12000 ] && file --mime-type "$destino" | grep -qE 'image/jpeg|image/png|image/webp'; then
+            local slug="$1" app="$2" destino="assets/$1.jpg" tmp="assets/$1.download"
+            if [ -s "$destino" ]; then
+              echo "Já existe: $destino"
+              return 0
+            fi
+            for endereco in \
+              "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/$app/header.jpg" \
+              "https://cdn.cloudflare.steamstatic.com/steam/apps/$app/header.jpg" \
+              "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/$app/header.jpg"; do
+              if curl -fLsS --max-time 25 --retry 2 -A 'Mozilla/5.0' -o "$tmp" "$endereco"; then
+                if [ "$(wc -c < "$tmp")" -gt 4000 ] && file --mime-type "$tmp" | grep -q 'image/jpeg'; then
+                  mv "$tmp" "$destino"
                   echo "Imagem salva: $destino"
                   return 0
                 fi
               fi
             done
-            rm -f "$destino"
-            echo "::warning::Não foi possível baixar $destino"
+            rm -f "$tmp"
+            echo "::warning::Falhou: $destino (Steam app $app)"
             return 0
           }
-          baixar assets/fortnite.jpg \
-            'https://staticg.sportskeeda.com/editor/2021/11/f4d11-16377550139395-1920.jpg' \
-            'https://staticg.sportskeeda.com/editor/2025/02/e56db-17401349716135-1920.jpg'
-          baixar assets/god-of-war.jpg \
-            'https://www.techspot.com/images2/news/bigimage/2024/05/2024-05-13-image-3.jpg' \
-            'https://cdn.mos.cms.futurecdn.net/Cj5FBi89UX4fTJ9fnapTEh.jpg'
-          baixar assets/the-last-of-us.jpg \
-            'https://images.pushsquare.com/screenshots/127129/large.jpg' \
-            'https://gamegpu.com/images/1_2025/NEWS/q2/f123/The_Last_of_Us_Part_I.jpeg'
-      - name: Salvar imagens no repositório
+          baixar "red-dead" "1174180"
+          baixar "cyberpunk-2077" "1091500"
+          baixar "the-witcher-3" "292030"
+          baixar "hollow-knight" "367520"
+          baixar "stardew-valley" "413150"
+          baixar "baldurs-gate-3" "1086940"
+          baixar "hades" "1145360"
+          baixar "sekiro" "814380"
+          baixar "hogwarts-legacy" "990080"
+          baixar "terraria" "105600"
+          baixar "portal-2" "620"
+          baixar "half-life-2" "220"
+          baixar "left-4-dead-2" "550"
+          baixar "counter-strike-2" "730"
+          baixar "dota-2" "570"
+          baixar "grand-theft-auto-v" "271590"
+          baixar "resident-evil-4" "2050650"
+          baixar "resident-evil-2" "883710"
+          baixar "doom-eternal" "782330"
+          baixar "subnautica" "264710"
+          baixar "no-mans-sky" "275850"
+          baixar "slime-rancher" "433340"
+          baixar "celeste" "504230"
+          baixar "cuphead" "268910"
+          baixar "ori-will-of-the-wisps" "1057090"
+          baixar "undertale" "391540"
+          baixar "disco-elysium" "632470"
+          baixar "dave-the-diver" "1868140"
+          baixar "factorio" "427520"
+          baixar "satisfactory" "526870"
+          baixar "civilization-vi" "289070"
+          baixar "euro-truck-simulator-2" "227300"
+          baixar "monster-hunter-world" "582010"
+          baixar "dark-souls-iii" "374320"
+          baixar "skyrim-special-edition" "489830"
+      - name: Salvar imagens no repositorio
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/
           if ! git diff --cached --quiet; then
-            git commit -m "Adiciona imagens locais dos jogos ao GameTips"
+            git commit -m "Adiciona capas locais ausentes ao GameTips"
+            git pull --rebase origin main
             git push origin HEAD:main
           fi

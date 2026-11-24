@@ -26,11 +26,23 @@ function home(){
   $("#busca").oninput=draw;
   $("#chips").onclick=e=>{if(!e.target.dataset.c)return;cat=e.target.dataset.c;document.querySelectorAll(".chip").forEach(b=>b.classList.toggle("on",b==e.target));draw()};
   draw();rodape()}
+function steamTab(g){
+  const d=typeof STEAM_INFO!=="undefined"?STEAM_INFO[g.s]:null;
+  const esc=x=>String(x==null?"":x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  if(!d)return "<p>Informações da loja não disponíveis para este jogo.</p>";
+  const list=arr=>Array.isArray(arr)&&arr.length?"<ul>"+arr.map(v=>"<li>"+esc(v)+"</li>").join("")+"</ul>":"<p class='muted'>Não informado na fonte oficial consultada.</p>";
+  const field=(name,value)=>value?"<p><b>"+name+":</b> "+esc(Array.isArray(value)?value.join(", "):value)+"</p>":"";
+  const details=field("Desenvolvimento",d.dev)+field("Publicação",d.publisher)+field("Lançamento na loja",d.release)+field("Gêneros",d.genres)+field("Plataformas",d.platforms);
+  const note=d.source==="Epic Games"?"<p>Fortnite não tem página na Steam. Os requisitos abaixo são da Epic Games.</p>":"<p>Informações e requisitos oficiais para PC (Windows), quando fornecidos pela Steam.</p>";
+  const url=/^https:\/\/(store\.steampowered\.com|www\.epicgames\.com)\//.test(d.url||"")?d.url:"";
+  const source=url?"<p>Fonte: <a target='_blank' rel='noopener' href='"+esc(url)+"'>"+esc(d.source||"Página oficial")+" ↗</a></p>":"";
+  return note+details+"<h3>Requisitos mínimos para PC</h3>"+list(d.min)+"<h3>Requisitos recomendados para PC</h3>"+list(d.rec)+source;
+}
 function jogo(){
   const g=GAMES.find(x=>x.s==new URLSearchParams(location.search).get("j"));
   if(!g){$("main").innerHTML=`<p>Jogo não encontrado. <a href="index.html#jogos">Voltar</a></p>`;return rodape()}
   document.title=`${g.n} | ${SITE.nome}`;document.body.style.setProperty("--c",cor(g));
-  const sec=g.secs||[];
+  const sec=[...(g.secs||[]),["Steam",steamTab(g)]];
   const tabs=sec.length>1?`<div class="tabs">${sec.map((s,i)=>`<button class="tab${i?"":" on"}" data-i="${i}">${s[0]}</button>`).join("")}</div>`:"";
   const body=sec.length?sec.map((s,i)=>`<section class="pane${i?"":" on"}" data-i="${i}"><h2>${s[0]}</h2>${s[1]}</section>`).join(""):`<p class="soon">As dicas desse jogo ainda estão sendo escritas. Volta daqui a pouco.</p>`;
   const rel=GAMES.filter(x=>x!=g&&x.k==g.k).slice(0,4);

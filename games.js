@@ -1,6 +1,6 @@
 // DADOS DO SITE. Para adicionar ou editar jogos, mexa só aqui.
 // secs vazio = a página mostra 'dicas em breve'.
-const SITE={"nome": "GameTips", "autor": "", "curso": "", "ano": ""};
+const SITE={"nome":"GameTips","autor":"[MEU NOME]","curso":"[CURSO]","escola":"[ESCOLA]","orientador":"[PROFESSOR(A)]","ano":"2026"};
 const GAMES=[
  {
   "s": "fortnite",
@@ -25,7 +25,7 @@ const GAMES=[
    ],
    [
     "Curiosidades",
-    "<ul><li>O jogo é gratuito, o que ajudou muito a fazer o Battle Royale crescer.</li><li>Já teve show ao vivo dentro do jogo, como o do Travis Scott, em 2020.</li><li>Roda em vários aparelhos: console, computador e celular.</li><li class='me'>[Uma curiosidade que você achou e gostou.]</li></ul>"
+    "<ul><li>O jogo é gratuito, o que ajudou muito a fazer o Battle Royale crescer.</li><li>Já teve show ao vivo dentro do jogo, como o do Travis Scott, em 2020.</li><li>Roda em vários aparelhos: console, computador e celular.</li><li class='me'>[Uma curiosidade que você achou e gostou.]</li></ul><p>Fonte: <a href='[LINK]' target='_blank' rel='noopener'>[LINK]</a>.</p>"
    ]
   ]
  },
@@ -44,7 +44,7 @@ const GAMES=[
    ],
    [
     "Dicas",
-    "<ol><li><b>Use o Atreus.</b> As flechas dele atordoam inimigos e te dão um tempo pra respirar.</li><li><b>Aprenda a defender com o escudo.</b> Aparar no momento certo deixa o inimigo vulnerável.</li><li><b>O Machado Leviatã volta pra sua mão.</b> Arremesse e chame de volta, em vez de ficar só na luta corpo a corpo.</li><li><b>Gaste a experiência nas habilidades.</b> Não guarde, porque os golpes novos mudam bastante o jeito de lutar.</li><li><b>Melhore a armadura.</b> Os ferreiros Brok e Sindri fazem upgrades, e um equipamento melhor evita muita morte à toa.</li><li><b>Explore.</b> Baús e áreas escondidas dão recursos que você vai querer depois.</li><li><b>Dá pra mudar a dificuldade.</b> Se estiver muito difícil ou fácil demais, ajuste, o jogo é feito pra isso.</li></ol><p class='me'>[Sua dica pessoal ou um chefe que deu trabalho.]</p>"
+    "<ol><li><b>Use o Atreus.</b> As flechas dele atordoam inimigos e te dão um tempo pra respirar.</li><li><b>Aprenda a defender com o escudo.</b> Aparar no momento certo deixa o inimigo vulnerável.</li><li><b>O Machado Leviatã volta pra sua mão.</b> Arremesse e chame de volta, em vez de ficar só na luta corpo a corpo.</li><li><b>Gaste a experiência nas habilidades.</b> Não guarde, porque os golpes novos mudam bastante o jeito de lutar.</li><li><b>Melhore a armadura.</b> Os ferreiros Brok e Sindri fazem upgrades, e um equipamento melhor evita muita morte à toa.</li><li><b>Explore.</b> Baús e áreas escondidas dão recursos que você vai querer depois.</li><li><b>Dá pra mudar a dificuldade.</b> Se estiver muito difícil ou fácil demais, ajuste, o jogo é feito pra isso.</li></ol><p class='me'>[Sua dica pessoal ou um chefe que deu trabalho.]</p><p>Fonte: <a href='[LINK]' target='_blank' rel='noopener'>[LINK]</a>.</p>"
    ]
   ]
  },
@@ -63,7 +63,7 @@ const GAMES=[
    ],
    [
     "Dicas",
-    "<ol><li><b>Cuide do seu cavalo.</b> Alimente, escove e converse com ele. Quanto mais vínculo, melhor ele responde.</li><li><b>Fique de olho na barra de honra.</b> O que você faz muda como as pessoas tratam Arthur.</li><li><b>Coma e durma.</b> Saúde, resistência e Dead Eye dependem de você alimentar o personagem.</li><li><b>Cace e aproveite as peles.</b> Elas rendem dinheiro e itens.</li><li><b>Ajude o acampamento.</b> Contribuir melhora o ambiente pra todo mundo.</li><li><b>Evite confusão com a lei.</b> Atirar na cidade e ser visto traz problema.</li><li><b>Pare e explore.</b> Encontros no caminho muitas vezes são melhores que a missão principal.</li></ol><p class='me'>[Um momento que você achou marcante.]</p>"
+    "<ol><li><b>Cuide do seu cavalo.</b> Alimente, escove e converse com ele. Quanto mais vínculo, melhor ele responde.</li><li><b>Fique de olho na barra de honra.</b> O que você faz muda como as pessoas tratam Arthur.</li><li><b>Coma e durma.</b> Saúde, resistência e Dead Eye dependem de você alimentar o personagem.</li><li><b>Cace e aproveite as peles.</b> Elas rendem dinheiro e itens.</li><li><b>Ajude o acampamento.</b> Contribuir melhora o ambiente pra todo mundo.</li><li><b>Evite confusão com a lei.</b> Atirar na cidade e ser visto traz problema.</li><li><b>Pare e explore.</b> Encontros no caminho muitas vezes são melhores que a missão principal.</li></ol><p class='me'>[Um momento que você achou marcante.]</p><p>Fonte: <a href='[LINK]' target='_blank' rel='noopener'>[LINK]</a>.</p>"
    ]
   ]
  },
@@ -82,7 +82,7 @@ const GAMES=[
    ],
    [
     "Dicas",
-    "<ol><li><b>Use o modo de escuta.</b> Ele mostra onde os inimigos estão, mesmo atrás de paredes.</li><li><b>Não gaste munição à toa.</b> Ela é pouca, e às vezes a melhor saída é passar sem ser visto.</li><li><b>Procure em tudo.</b> Gavetas, mochilas e cantos escondem materiais importantes.</li><li><b>Aprenda a fabricar.</b> Kits de cura e itens de ataque podem salvar a partida.</li><li><b>Distraia os inimigos.</b> Jogar um tijolo ou uma garrafa atrai eles pra outro lado.</li><li><b>Melhore as armas nas bancadas.</b> Gaste as peças com o que você mais usa.</li><li><b>Preste atenção nas conversas.</b> Os diálogos dão pistas e contam muita coisa da história.</li></ol><p class='me'>[Uma parte do jogo que você lembra até hoje, sem dar spoiler.]</p>"
+    "<ol><li><b>Use o modo de escuta.</b> Ele mostra onde os inimigos estão, mesmo atrás de paredes.</li><li><b>Não gaste munição à toa.</b> Ela é pouca, e às vezes a melhor saída é passar sem ser visto.</li><li><b>Procure em tudo.</b> Gavetas, mochilas e cantos escondem materiais importantes.</li><li><b>Aprenda a fabricar.</b> Kits de cura e itens de ataque podem salvar a partida.</li><li><b>Distraia os inimigos.</b> Jogar um tijolo ou uma garrafa atrai eles pra outro lado.</li><li><b>Melhore as armas nas bancadas.</b> Gaste as peças com o que você mais usa.</li><li><b>Preste atenção nas conversas.</b> Os diálogos dão pistas e contam muita coisa da história.</li></ol><p class='me'>[Uma parte do jogo que você lembra até hoje, sem dar spoiler.]</p><p>Fonte: <a href='[LINK]' target='_blank' rel='noopener'>[LINK]</a>.</p>"
    ]
   ]
  },

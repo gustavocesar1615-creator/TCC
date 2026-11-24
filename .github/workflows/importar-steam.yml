@@ -1,0 +1,29 @@
+name: Atualizar dados Steam do GameTips
+on:
+  push:
+    paths:
+      - '.github/workflows/importar-steam.yml'
+      - '.github/scripts/importar-steam.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  requisitos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Consultar fichas dos jogos na Steam
+        run: python3 .github/scripts/importar-steam.py
+      - name: Salvar requisitos oficiais no site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add steam-info.js
+          if ! git diff --cached --quiet; then
+            git commit -m "Atualiza requisitos e informacoes dos jogos pela Steam"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

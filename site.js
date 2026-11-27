@@ -50,10 +50,76 @@ function rodape() {
   footer.replaceChildren(...partes, direitos);
 }
 
+
+// Preferências locais, sem login nem envio de dados ao servidor.
+const LIBRARY_KEYS = { saved: "gametips:saved:v1", recent: "gametips:recent:v1" };
+const memoryLibrary = { saved: null, recent: null };
+function readLibrary(kind) {
+  let value = memoryLibrary[kind];
+  if (value === null) {
+    try { value = JSON.parse(localStorage.getItem(LIBRARY_KEYS[kind]) || "[]"); }
+    catch { value = []; }
+  }
+  return Array.isArray(value) ? [...new Set(value.filter(slug => typeof slug === "string" && GAMES.some(game => game.s === slug)))] : [];
+}
+function writeLibrary(kind, slugs) {
+  const value = [...new Set(slugs.filter(slug => GAMES.some(game => game.s === slug)))];
+  memoryLibrary[kind] = value;
+  try { localStorage.setItem(LIBRARY_KEYS[kind], JSON.stringify(value)); return true; }
+  catch { return false; }
+}
+function toggleSaved(slug) {
+  const saved = readLibrary("saved");
+  const next = saved.includes(slug) ? saved.filter(item => item !== slug) : [...saved, slug];
+  const persisted = writeLibrary("saved", next);
+  return { saved: next.includes(slug), persisted };
+}
+function rememberGame(slug) {
+  writeLibrary("recent", [slug, ...readLibrary("recent").filter(item => item !== slug)].slice(0, 5));
+}
+function catalogGames(category, query, savedOnly, order) {
+  const saved = savedOnly ? new Set(readLibrary("saved")) : null;
+  const list = GAMES.filter(game => (category === "Todos" || game.k === category) &&
+    normalize(game.n).includes(normalize(query.trim())) && (!saved || saved.has(game.s)));
+  if (order === "az" || order === "za") list.sort((a, b) =>
+    (order === "az" ? 1 : -1) * a.n.localeCompare(b.n, "pt-BR", { sensitivity: "base" }));
+  return list;
+}
+
+// Seleções editoriais do catálogo, não avaliações nem tendências inventadas.
+const DISCOVER = [
+  { slug: "stardew-valley", title: "Jogar no meu ritmo", reason: "Cuidar da fazenda, conhecer a vila e escolher seus próprios objetivos." },
+  { slug: "portal-2", title: "Quebrar a cabeça", reason: "Resolver salas de teste usando lógica, espaço e criatividade." },
+  { slug: "hollow-knight", title: "Explorar sem pressa", reason: "Descobrir caminhos interligados e entender Hallownest aos poucos." }
+];
+function drawDiscovery() {
+  const host = $("#discover-list");
+  if (!host) return;
+  host.innerHTML = DISCOVER.map(item => {
+    const game = GAMES.find(g => g.s === item.slug);
+    if (!game) return "";
+    return '<a class="discover-item" href="' + gameUrl(game) + '">' + thumb(game) +
+      '<div><strong>' + esc(item.title) + '</strong><span class="discover-game">' + esc(game.n) +
+      '</span><p>' + esc(item.reason) + '</p></div></a>';
+  }).join("");
+}
+function drawRecent() {
+  const section = $("#recent"), list = $("#recent-list");
+  if (!section || !list) return;
+  const recent = readLibrary("recent").map(slug => GAMES.find(game => game.s === slug)).filter(Boolean);
+  section.hidden = recent.length === 0;
+  list.innerHTML = recent.map(game => '<a class="recent-item" href="' + gameUrl(game) + '">' +
+    thumb(game) + '<span>' + esc(game.n) + '</span></a>').join("");
+}
+
 function home() {
   const cats = [...new Set(GAMES.map(game => game.k))].sort();
   const chips = $("#chips"), busca = $("#busca"), grid = $("#grid");
-  let cat = "Todos";
+  const savedFilter = $("#saved-filter"), order = $("#game-sort"), random = $("#random-game");
+  let cat = "Todos", savedOnly = false, visible = [];
+  drawDiscovery();
+  drawRecent();
+  $("#clear-recent").addEventListener("click", () => { writeLibrary("recent", []); drawRecent(); });
   chips.innerHTML = ["Todos", ...cats].map(c =>
     '<button type="button" class="chip' + (c === "Todos" ? ' on' : '') +
     '" aria-pressed="' + String(c === "Todos") + '" data-c="' + esc(c) + '">' + esc(c) + '</button>'
@@ -61,16 +127,24 @@ function home() {
   $("#sobre-n").textContent = GAMES.length;
 
   function draw() {
-    const q = normalize(busca.value.trim());
-    const lista = GAMES.filter(game => (cat === "Todos" || game.k === cat) && normalize(game.n).includes(q));
+    const lista = catalogGames(cat, busca.value, savedOnly, order.value);
+    visible = lista;
+    savedFilter.textContent = "Guardados (" + readLibrary("saved").length + ")";
+    savedFilter.setAttribute("aria-pressed", String(savedOnly));
+    random.disabled = lista.length === 0;
     $("#cont").textContent = "Mostrando " + lista.length + " de " + GAMES.length + " jogos";
     grid.innerHTML = lista.map(game =>
       '<a class="card" style="--c:' + cor(game) + '" href="' + gameUrl(game) + '">' + thumb(game) +
       '<div class="b"><small>' + esc(game.k) + '</small><h3>' + esc(game.n) +
       '</h3><p>' + esc(game.t) + '</p><span>Ver dicas →</span></div></a>'
-    ).join("") || '<p class="muted">Nenhum jogo encontrado.</p>';
+    ).join("") || '<p class="muted">' + (savedOnly ? 'Nenhum jogo guardado corresponde aos filtros. Abra uma ficha para guardar um jogo.' : 'Nenhum jogo encontrado.') + '</p>';
   }
   busca.addEventListener("input", draw);
+  order.addEventListener("change", draw);
+  savedFilter.addEventListener("click", () => { savedOnly = !savedOnly; draw(); });
+  random.addEventListener("click", () => {
+    if (visible.length) location.href = gameUrl(visible[Math.floor(Math.random() * visible.length)]);
+  });
   chips.addEventListener("click", event => {
     const button = event.target.closest(".chip");
     if (!button) return;
@@ -80,6 +154,13 @@ function home() {
       item.classList.toggle("on", active);
       item.setAttribute("aria-pressed", String(active));
     });
+    draw();
+  });
+  // Atualiza a biblioteca ao voltar pelo histórico do navegador.
+  window.addEventListener("pageshow", event => {
+    if (!event.persisted) return;
+    memoryLibrary.saved = memoryLibrary.recent = null;
+    drawRecent();
     draw();
   });
   draw();
@@ -114,6 +195,7 @@ function jogo() {
     main.innerHTML = '<p>Jogo não encontrado. <a href="index.html#jogos">Voltar</a></p>';
     return;
   }
+  rememberGame(game.s);
   document.title = game.n + " | " + SITE.nome;
   document.body.style.setProperty("--c", cor(game));
   const sec = [...(game.secs || []), ["Informações e requisitos", steamTab(game)]];
@@ -128,10 +210,31 @@ function jogo() {
   if (!rel.length) rel.push(...GAMES.filter(item => item !== game).slice(0, 4));
   main.innerHTML = '<a class="back" href="index.html#jogos">← Voltar para os jogos</a>' +
     '<div class="hero"><div><span class="tag">' + esc(game.tag || game.k) + '</span><h1>' +
-    esc(game.n) + '</h1><p class="lead">' + esc(game.sub || game.t) + '</p></div>' + thumb(game) +
+    esc(game.n) + '</h1><p class="lead">' + esc(game.sub || game.t) + '</p>' +
+    '<div class="game-actions"><button type="button" class="tool-button" id="save-game" aria-pressed="false">Guardar jogo</button>' +
+    '<button type="button" class="tool-button" id="jump-tips">Ir para as dicas</button></div><p id="save-status" class="save-status muted" role="status"></p></div>' + thumb(game) +
     '</div>' + tabs + body + '<h2>Veja também</h2><div class="links">' +
     rel.map(item => '<a href="' + gameUrl(item) + '">' + esc(item.n) + ' ↗</a>').join("") + '</div>';
   window.GameTipsTabs.init(main);
+  const saveButton = $("#save-game");
+  function updateSave(saved) {
+    saveButton.textContent = saved ? "Remover dos guardados" : "Guardar jogo";
+    saveButton.setAttribute("aria-pressed", String(saved));
+  }
+  updateSave(readLibrary("saved").includes(game.s));
+  saveButton.addEventListener("click", () => {
+    const result = toggleSaved(game.s);
+    updateSave(result.saved);
+    $("#save-status").textContent = (result.saved ? "Jogo guardado." : "Jogo removido.") +
+      (result.persisted ? " Sua lista fica neste navegador." : " O navegador não permitiu salvar a lista permanentemente.");
+  });
+  const tipsIndex = sec.findIndex(item => item[0] === "Dicas");
+  const jump = $("#jump-tips");
+  jump.hidden = tipsIndex < 0;
+  jump.addEventListener("click", () => {
+    const tab = main.querySelector('.tab[data-i="' + tipsIndex + '"]');
+    if (tab) { tab.click(); tab.focus(); tab.scrollIntoView({ block: "nearest" }); }
+  });
 }
 
 if (document.body.dataset.p === "home") home();

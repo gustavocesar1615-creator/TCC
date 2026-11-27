@@ -61,3 +61,9 @@ Nomes e imagens dos jogos pertencem aos seus respectivos titulares. Consulte as 
 ## Pesquisa editorial das fichas (27/11/2026)
 
 Os 39 jogos receberam uma seção "Contexto e design" e três novas curiosidades em "Curiosidades". As informações são apresentadas em português, com referências de consulta da Steam e, quando aplicável, dos desenvolvedores ou publishers. O texto contextualiza design, história da produção, versões, acessibilidade e aspectos técnicos, evitando spoilers importantes. As fontes são indicações para conferência e não autorização de reprodução de imagens; mantenha a atribuição e confirme direitos de uso antes de incorporar capturas. A data de uma ficha de loja pode se referir à edição de PC ou a uma versão específica. As fichas antigas continuam disponíveis e oferecem um link para a ficha ampliada.
+
+## Descoberta e biblioteca pessoal
+
+A página inicial oferece três sugestões editoriais, histórico dos cinco últimos jogos visitados, ordenação por nome e um sorteio que respeita os filtros e a busca ativos. Nas fichas dinâmicas, o visitante pode guardar ou remover jogos e ir diretamente às dicas. Os guardados e o histórico são armazenados no localStorage do navegador, sem conta ou banco de dados; o histórico pode ser limpo. Se o armazenamento estiver indisponível, a alteração funciona somente durante a página atual. Os dados não são sincronizados entre aparelhos. As sugestões são seleções fixas, não rankings ou avaliações de usuários.
+
+Testes adicionais: guardar/remover uma ficha, recarregar a página, filtrar guardados, ordenar A–Z/Z–A, sortear com filtros ativos, abrir cinco fichas e limpar o histórico. Verificar a navegação por teclado e o layout em celulares.

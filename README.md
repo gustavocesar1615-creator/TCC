@@ -75,3 +75,9 @@ O botão apresenta o jogo sorteado no próprio catálogo, com link para a ficha 
 ## Ampliação do catálogo para 50 jogos
 
 Foram adicionados 11 títulos com fichas dinâmicas, cinco seções editoriais e referências à Steam. Os requisitos das novas fichas são preenchidos pela automação existente; as capas são importadas pelo fluxo de imagens, com endereço alternativo da Steam caso a capa local ainda não esteja disponível. O total do catálogo é calculado automaticamente, inclusive para filtros e sorteio.
+
+## Ferramentas de consulta das fichas
+
+O arquivo guia.js acrescenta um caderno de anotações independente por jogo (até 2000 caracteres), marcações manuais de leitura e links diretos por parâmetro secao. O progresso e a última aba ficam no localStorage, separados por identificador do jogo. A aba indicada no link tem prioridade sobre a última visitada. O evento gametips:tabchange é emitido pelas abas tanto no clique quanto pelo teclado. A Clipboard API copia o link, com campo alternativo para cópia manual. Dados locais, apagáveis e sem sincronização entre aparelhos.
+
+Testar em navegador: salvar notas diferentes em duas fichas, recarregar, marcar/desmarcar abas, testar setas, abrir link com secao=dicas, voltar à última aba, copiar link e limpar progresso e anotação independentemente.

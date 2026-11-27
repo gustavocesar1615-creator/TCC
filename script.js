@@ -34,6 +34,7 @@
           }
         });
         if (focus) tab.focus();
+        group.dispatchEvent(new CustomEvent("gametips:tabchange"));
       }
       group.addEventListener("click", event => {
         const tab = event.target.closest(".tab");

@@ -94,3 +94,21 @@ footer{text-align:center;color:var(--mu);padding:24px;border-top:1px solid #2326
 .random-help{font-size:.82rem;color:var(--mu);margin:0;text-align:center}
 .random-pick .thumb[hidden]{display:none}
 .random-pick>div:not(.thumb){padding:10px 12px}
+
+/* Ferramentas de consulta */
+.guide-tools,.guide-notes{padding:14px 16px;border:1px solid #30343e;border-radius:8px;background:var(--card)}
+.guide-tools{margin:22px 0 12px}.guide-notes{margin:28px 0 0}
+.guide-progress-row,.guide-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.guide-progress-row{justify-content:space-between}
+.guide-progress-row p{font-size:.86rem;margin:2px 0 0}
+.guide-progress-row progress{width:min(100%,230px);height:9px;accent-color:var(--c)}
+.guide-actions{margin-top:12px}
+.guide-feedback{font-size:.85rem;margin:6px 0 0}.guide-feedback:empty{display:none}
+#guide-link-box{margin-top:12px}
+#guide-link-box label,.guide-notes label{display:block;font-size:.88rem;margin-bottom:5px}
+#guide-link,.guide-notes textarea{width:100%;background:var(--bg);border:1px solid #3a3e48;border-radius:6px;color:var(--tx);padding:10px;font:inherit}
+.guide-notes summary{cursor:pointer;font-weight:700}
+.guide-notes p{font-size:.9rem}.guide-notes textarea{resize:vertical;min-height:100px}
+#guide-note-count{font-size:.82rem;margin-left:auto}
+.tab.guide-read::after{content:" ✓";font-weight:700}
+@media(max-width:480px){.guide-tools,.guide-notes{padding:12px}.guide-actions{gap:6px}.guide-actions .tool-button{font-size:.84rem}.guide-progress-row progress{width:100%}}

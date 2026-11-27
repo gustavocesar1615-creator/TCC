@@ -64,10 +64,10 @@ Os 39 jogos receberam uma seção "Contexto e design" e três novas curiosidades
 
 ## Descoberta e biblioteca pessoal
 
-A página inicial oferece três sugestões editoriais, histórico dos cinco últimos jogos visitados, ordenação por nome e um sorteio que respeita os filtros e a busca ativos. Nas fichas dinâmicas, o visitante pode guardar ou remover jogos e ir diretamente às dicas. Os guardados e o histórico são armazenados no localStorage do navegador, sem conta ou banco de dados; o histórico pode ser limpo. Se o armazenamento estiver indisponível, a alteração funciona somente durante a página atual. Os dados não são sincronizados entre aparelhos. As sugestões são seleções fixas, não rankings ou avaliações de usuários.
+A página inicial oferece três sugestões editoriais, histórico dos cinco últimos jogos visitados, ordenação por nome e um sorteio independente dos filtros e da busca. Nas fichas dinâmicas, o visitante pode guardar ou remover jogos e ir diretamente às dicas. Os guardados e o histórico são armazenados no localStorage do navegador, sem conta ou banco de dados; o histórico pode ser limpo. Se o armazenamento estiver indisponível, a alteração funciona somente durante a página atual. Os dados não são sincronizados entre aparelhos. As sugestões são seleções fixas, não rankings ou avaliações de usuários.
 
-Testes adicionais: guardar/remover uma ficha, recarregar a página, filtrar guardados, ordenar A–Z/Z–A, sortear com filtros ativos, abrir cinco fichas e limpar o histórico. Verificar a navegação por teclado e o layout em celulares.
+Testes adicionais: guardar/remover uma ficha, recarregar a página, filtrar guardados, ordenar A–Z/Z–A, sortear mesmo com filtros ativos e guardados vazios, abrir cinco fichas e limpar o histórico. Verificar a navegação por teclado e o layout em celulares.
 
 ### Sorteio de jogos
 
-O botão apresenta o jogo sorteado no próprio catálogo, com link para a ficha e opção de sortear novamente. O sorteio usa os filtros, busca e guardados atuais; se não houver resultados, apresenta uma mensagem. Quando há mais de uma opção, evita repetir imediatamente o mesmo jogo.
+O botão apresenta o jogo sorteado no próprio catálogo, com link para a ficha e opção de sortear novamente. O sorteio usa o catálogo completo de jogos, independentemente dos filtros, busca e guardados. A lógica fica em sorteio.js e é carregada separadamente da interface principal. Quando há mais de uma opção, evita repetir imediatamente o mesmo jogo.

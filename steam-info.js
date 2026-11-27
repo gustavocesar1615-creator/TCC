@@ -1298,110 +1298,320 @@ const STEAM_INFO={
     "appid": 400,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/400/",
-    "min": [],
+    "min": [
+      "Mínimo: Processador a 1.7 GHz, 512MB de RAM, placa gráfica com suporte para DirectX® 8.1 (é requer suporte para SSE), Windows® 7 (32/64 bit)/Vista/XP, Rato, Teclado, Ligação à Internet",
+      "Recomendado: Processador Pentium 4 (3.0GHz ou superior), 1GB de RAM, placa gráfica com de para DirectX® 9, Windows® 7 (32/64 bit) /Vista/XP, Rato, Teclado, Ligação à Internet"
+    ],
     "rec": [],
-    "status": "aguardando importação",
+    "status": "consultado",
     "dev": "Valve",
-    "release": "10 out. 2007"
+    "release": "10 out. 2007",
+    "publisher": "Valve",
+    "genres": [
+      "Ação"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux"
+    ]
   },
   "slay-the-spire": {
     "appid": 646570,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/646570/",
-    "min": [],
+    "min": [
+      "Sistema Operativo *: Windows XP, Vista, 7, 8/8.1, 10",
+      "Processador: 2.0 Ghz",
+      "Memória: 2 GB de RAM",
+      "Placa gráfica: 1Gb Video Memory, capable of OpenGL 3.0+ support (2.1 with ARB extensions acceptable)",
+      "Espaço no disco: Requer 1 GB de espaço livre"
+    ],
     "rec": [],
-    "status": "aguardando importação",
+    "status": "consultado",
     "dev": "Mega Crit",
-    "release": "23 jan. 2019"
+    "release": "23 jan. 2019",
+    "publisher": "Mega Crit",
+    "genres": [
+      "Indie",
+      "Estratégia"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ]
   },
   "the-stanley-parable": {
     "appid": 1703340,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/1703340/",
-    "min": [],
+    "min": [
+      "Sistema Operativo *: Windows 7 or higher 64bit",
+      "Processador: Intel Core i3 2.00 GHz or AMD equivalent",
+      "Memória: 4 GB de RAM",
+      "Placa gráfica: NVIDIA GeForce 450 or higher with 1GB Memory",
+      "Espaço no disco: Requer 5 GB de espaço livre"
+    ],
     "rec": [],
-    "status": "aguardando importação",
+    "status": "consultado",
     "dev": "Crows Crows Crows",
-    "release": "27 abr. 2022"
+    "release": "27 abr. 2022",
+    "publisher": "Crows Crows Crows",
+    "genres": [
+      "Aventura",
+      "Casual",
+      "Indie"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ]
   },
   "a-short-hike": {
     "appid": 1055540,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/1055540/",
-    "min": [],
+    "min": [
+      "Sistema Operativo *: Windows 7 SP1+ (or later)",
+      "Processador: Intel or AMD Dual Core at 2 GHz or better",
+      "Memória: 2 GB de RAM",
+      "Placa gráfica: Intel Graphics 4400 or better",
+      "DirectX: Versão 11",
+      "Espaço no disco: Requer 400 MB de espaço livre"
+    ],
     "rec": [],
-    "status": "aguardando importação",
+    "status": "consultado",
     "dev": "adamgryu",
-    "release": "30 jul. 2019"
+    "release": "30 jul. 2019",
+    "publisher": "adamgryu",
+    "genres": [
+      "Aventura",
+      "Indie"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ]
   },
   "journey": {
     "appid": 638230,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/638230/",
-    "min": [],
-    "rec": [],
-    "status": "aguardando importação",
+    "min": [
+      "Requer um sistema operativo e processador de 64 bits",
+      "Sistema Operativo: Windows 10",
+      "Processador: Intel Core i3-2120 | AMD FX-4350",
+      "Memória: 4 GB de RAM",
+      "Placa gráfica: Nvidia GTS 450 | AMD Radeon HD 5750",
+      "Espaço no disco: Requer 4 GB de espaço livre"
+    ],
+    "rec": [
+      "Requer um sistema operativo e processador de 64 bits"
+    ],
+    "status": "consultado",
     "dev": "thatgamecompany",
-    "release": "11 jun. 2020"
+    "release": "11 jun. 2020",
+    "publisher": "Annapurna Interactive",
+    "genres": [
+      "Aventura",
+      "Indie"
+    ],
+    "platforms": [
+      "Windows"
+    ]
   },
   "gris": {
     "appid": 683320,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/683320/",
-    "min": [],
+    "min": [
+      "Sistema Operativo *: Windows 7 or later",
+      "Processador: Intel Core2 Duo E6750 (2 * 2660) or equivalent / AMD Athlon 64 X2 Dual Core 5000+ (2 * 2600) or equivalent",
+      "Memória: 4 GB de RAM",
+      "Placa gráfica: Geforce GT 430 (1024 MB) / Radeon HD 5570 (1024 MB)",
+      "Espaço no disco: Requer 4 GB de espaço livre"
+    ],
     "rec": [],
-    "status": "aguardando importação",
+    "status": "consultado",
     "dev": "Nomada Studio",
-    "release": "13 dez. 2018"
+    "release": "13 dez. 2018",
+    "publisher": "Devolver Digital",
+    "genres": [
+      "Aventura",
+      "Indie"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ]
   },
   "unpacking": {
     "appid": 1135690,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/1135690/",
-    "min": [],
-    "rec": [],
-    "status": "aguardando importação",
+    "min": [
+      "Requer um sistema operativo e processador de 64 bits",
+      "Sistema Operativo *: Windows 7 SP1+",
+      "Processador: SSE2 instruction set support",
+      "Placa gráfica: Graphics card with DX10 (shader model 4.0) capabilities.",
+      "Espaço no disco: Requer 1 GB de espaço livre"
+    ],
+    "rec": [
+      "Requer um sistema operativo e processador de 64 bits"
+    ],
+    "status": "consultado",
     "dev": "Witch Beam",
-    "release": "1 nov. 2021"
+    "release": "1 nov. 2021",
+    "publisher": "Balor Games",
+    "genres": [
+      "Casual",
+      "Indie",
+      "Simulação"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ]
   },
   "dorfromantik": {
     "appid": 1455840,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/1455840/",
-    "min": [],
-    "rec": [],
-    "status": "aguardando importação",
+    "min": [
+      "Sistema Operativo *: Windows 7",
+      "Processador: 2 GHz Dual Core (Intel / AMD)",
+      "Memória: 3 GB de RAM",
+      "Placa gráfica: Nvidia GT550M | AMD Radeon R7/HD 5650 | Intel HD 520",
+      "Espaço no disco: Requer 650 MB de espaço livre",
+      "Placa de som: Usa a tua imaginação para criares os teus próprios efeitos sonoros :)"
+    ],
+    "rec": [
+      "Sistema Operativo: Windows 10",
+      "Processador: 2.5 GHz Dual Core (Intel / AMD)",
+      "Memória: 4 GB de RAM",
+      "Placa gráfica: Nvidia GT740M | AMD Radeon R8 | Intel HD 630",
+      "Espaço no disco: Requer 650 MB de espaço livre",
+      "Placa de som: Ter uma :)"
+    ],
+    "status": "consultado",
     "dev": "Toukana Interactive",
-    "release": "28 abr. 2022"
+    "release": "28 abr. 2022",
+    "publisher": "Toukana Interactive",
+    "genres": [
+      "Casual",
+      "Indie",
+      "Simulação",
+      "Estratégia"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ]
   },
   "outer-wilds": {
     "appid": 753640,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/753640/",
-    "min": [],
-    "rec": [],
-    "status": "aguardando importação",
+    "min": [
+      "Requer um sistema operativo e processador de 64 bits",
+      "Sistema Operativo: Windows 10",
+      "Processador: Intel Core i5-2300 | AMD FX-4350",
+      "Memória: 6 GB de RAM",
+      "Placa gráfica: Nvidia GeForce GTX 660, 2 GB | AMD Radeon HD 7870, 2 GB",
+      "Espaço no disco: Requer 8 GB de espaço livre",
+      "Notas adicionais: Gamepad or Controller Recommended (Xbox and PS4 Natively Supported)"
+    ],
+    "rec": [
+      "Requer um sistema operativo e processador de 64 bits",
+      "Sistema Operativo: Windows 10",
+      "Processador: Intel Core i5-8400 | AMD Ryzen 5 2600X",
+      "Memória: 8 GB de RAM",
+      "Placa gráfica: Nvidia GeForce GTX 1060 | AMD Radeon RX 580",
+      "Espaço no disco: Requer 8 GB de espaço livre",
+      "Notas adicionais: Gamepad or Controller Recommended (Xbox and PS4 Natively Supported)"
+    ],
+    "status": "consultado",
     "dev": "Mobius Digital",
-    "release": "18 jun. 2020"
+    "release": "18 jun. 2020",
+    "publisher": "Annapurna Interactive",
+    "genres": [
+      "Ação",
+      "Aventura"
+    ],
+    "platforms": [
+      "Windows"
+    ]
   },
   "human-fall-flat": {
     "appid": 477160,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/477160/",
-    "min": [],
-    "rec": [],
-    "status": "aguardando importação",
+    "min": [
+      "Sistema Operativo *: Windows XP/Vista/7/8/8.1/10 x86 and x64",
+      "Processador: Intel Core2 Duo E6750 (2 * 2660) or equivalent | AMD Athlon 64 X2 Dual Core 6000+ (2 * 3000) or equivalent",
+      "Memória: 1024 MB de RAM",
+      "Placa gráfica: GeForce GT 740 (2048 MB) or equivalent | Radeon HD 5770 (1024 MB)",
+      "Espaço no disco: Requer 500 MB de espaço livre"
+    ],
+    "rec": [
+      "Sistema Operativo *: Windows XP/Vista/7/8/8.1/10 x86 and x64",
+      "Processador: Intel Core2 Quad Q9300 (4 * 2500) or equivalent | AMD A10-5800K APU (4*3800) or equivalent",
+      "Memória: 2048 MB de RAM",
+      "Placa gráfica: GeForce GTX 460 (1024 MB) or equivalent | Radeon HD 7770 (1024 MB)",
+      "Espaço no disco: Requer 500 MB de espaço livre"
+    ],
+    "status": "consultado",
     "dev": "No Brakes Games",
-    "release": "22 jul. 2016"
+    "release": "22 jul. 2016",
+    "publisher": "Curve Games",
+    "genres": [
+      "Aventura",
+      "Casual",
+      "Indie",
+      "Simulação"
+    ],
+    "platforms": [
+      "Windows",
+      "macOS"
+    ]
   },
   "dark-souls-ii": {
     "appid": 335300,
     "source": "Steam",
     "url": "https://store.steampowered.com/app/335300/",
-    "min": [],
-    "rec": [],
-    "status": "aguardando importação",
+    "min": [
+      "Sistema Operativo *: Windows 7 SP1 64bit, Windows 8.1 64bit",
+      "Processador: AMD® A8 3870 3,6 Ghz or Intel® Core ™ i3 2100 3.1Ghz",
+      "Memória: 4 GB de RAM",
+      "Placa gráfica: NVIDIA® GeForce GTX 465 / ATI Radeon TM HD 6870",
+      "DirectX: Versão 11",
+      "Rede: Ligação à Internet de banda larga",
+      "Espaço no disco: Requer 23 GB de espaço livre",
+      "Placa de som: DirectX 11 sound device"
+    ],
+    "rec": [
+      "Sistema Operativo *: Windows 7 SP1 64bit, Windows 8.1 64bit",
+      "Processador: AMD® FX 8150 3.6 GHz or Intel® Core™ i7 2600 3.4 GHz",
+      "Memória: 8 GB de RAM",
+      "Placa gráfica: NVIDIA® GeForce® GTX 750, ATI Radeon™ HD 7850",
+      "DirectX: Versão 11",
+      "Rede: Ligação à Internet de banda larga",
+      "Espaço no disco: Requer 23 GB de espaço livre",
+      "Placa de som: DirectX 11 sound device"
+    ],
+    "status": "consultado",
     "dev": "FromSoftware, Inc.",
-    "release": "1 abr. 2015"
+    "release": "1 abr. 2015",
+    "publisher": "Bandai Namco Entertainment, FromSoftware, Inc.",
+    "genres": [
+      "Ação",
+      "RPG"
+    ],
+    "platforms": [
+      "Windows"
+    ]
   }
 };

@@ -140,3 +140,10 @@ footer{text-align:center;color:var(--mu);padding:24px;border-top:1px solid #2326
 .gloss-callout{font-size:.92rem;margin:14px 0;color:var(--mu)}
 .gloss-callout a,.top nav a[aria-current=page]{color:var(--c)}
 @media(max-width:650px){.gloss-list{grid-template-columns:1fr}.gloss-controls{padding:12px}.gloss-term{scroll-margin-top:150px}}
+
+/* Definição individual do glossário */
+.gloss-list.gloss-single{display:block;max-width:760px}
+.gloss-single .gloss-term:not([hidden]){padding:20px;background:var(--card);border:1px solid #30343e;border-left:3px solid var(--c);border-radius:8px}
+.gloss-single .gloss-term h2{font-size:1.35rem}
+.gloss-single .gloss-example{margin-top:16px;padding-top:12px;border-top:1px solid #30343e}
+.gloss-permalink[hidden],#gloss-count[hidden]{display:none}

@@ -8,6 +8,27 @@
   const count = document.getElementById("gloss-count");
   const empty = document.getElementById("gloss-empty");
   if (!controls || !search || !category || !letters || !count || !empty) return;
+  // A visualização individual usa uma URL própria; a âncora preserva a
+  // navegação até o termo mesmo quando JavaScript estiver desativado.
+  const requested = new URLSearchParams(location.search).get("termo");
+  const selected = requested && terms.find(term => term.id === "termo-" + requested);
+  if (selected) {
+    const title = selected.querySelector("h2").textContent;
+    document.title = title + " | Glossário gamer | GameTips";
+    document.querySelector(".gloss-intro h1").textContent = title;
+    document.querySelector(".gloss-intro .lead").textContent = "Definição do glossário gamer";
+    const back = document.getElementById("gloss-back");
+    back.href = "glossario.html";
+    back.textContent = "← Voltar ao glossário completo";
+    document.getElementById("gloss-list").classList.add("gloss-single");
+    terms.forEach(term => { term.hidden = term !== selected; });
+    selected.querySelector(".gloss-permalink").hidden = true;
+    count.hidden = true;
+    return;
+  }
+  if (requested) {
+    document.querySelector(".gloss-intro .lead").textContent = "Termo não encontrado. Consulte a lista completa abaixo.";
+  }
   const normalize = text => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   const indexed = terms.map(term => ({term, search: normalize(term.textContent), category: term.dataset.category, letter: term.dataset.letter}));
   let letter = "";

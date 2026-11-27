@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Importa metadados e requisitos para PC das fichas oficiais do Steam."""
+"""Importa metadados e requisitos para PC das fichas oficiais do Steam (catálogo ampliado)."""
 import html
 import json
 import re

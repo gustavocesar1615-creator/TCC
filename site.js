@@ -17,13 +17,19 @@ const gameUrl = game => "jogo.html?j=" + encodeURIComponent(game.s);
 function thumb(game) {
   const src = game.img || "assets/" + game.s + ".jpg";
   return '<img class="thumb" src="' + esc(src) + '" alt="' + esc(game.n) +
-    '" loading="lazy" data-fallback="' + esc(game.n.charAt(0)) + '">';
+    '" loading="lazy" data-cover-fallback="' + esc(game.coverFallback || "") + '" data-fallback="' + esc(game.n.charAt(0)) + '">';
 }
 
 // O listener em captura também atende imagens adicionadas depois da busca.
 document.addEventListener("error", event => {
   const img = event.target;
   if (!(img instanceof HTMLImageElement) || !img.hasAttribute("data-fallback")) return;
+  if (img.dataset.coverFallback) {
+    const alternative = img.dataset.coverFallback;
+    delete img.dataset.coverFallback;
+    img.src = alternative;
+    return;
+  }
   const fallback = document.createElement("div");
   fallback.className = "thumb ph";
   fallback.setAttribute("role", "img");
@@ -174,7 +180,8 @@ function steamTab(game) {
   const note = data.source === "Epic Games"
     ? "<p>Fortnite não tem página na Steam. Os requisitos abaixo são da Epic Games.</p>"
     : "<p>Informações e requisitos oficiais para PC (Windows), quando fornecidos pela Steam.</p>";
-  const status = data.status === "consulta indisponível"
+  const status = data.status === "aguardando importação"
+    ? "<p class='muted'>Os requisitos desta ficha ainda serão importados da loja oficial.</p>" : data.status === "consulta indisponível"
     ? "<p class='muted'>A última consulta à loja falhou; os dados anteriores podem estar desatualizados.</p>" : "";
   const url = /^https:\/\/(store\.steampowered\.com|www\.epicgames\.com)\//.test(data.url || "") ? data.url : "";
   const source = url ? "<p>Fonte: <a target='_blank' rel='noopener noreferrer' href='" + esc(url) + "'>" +

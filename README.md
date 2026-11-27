@@ -71,3 +71,7 @@ Testes adicionais: guardar/remover uma ficha, recarregar a página, filtrar guar
 ### Sorteio de jogos
 
 O botão apresenta o jogo sorteado no próprio catálogo, com link para a ficha e opção de sortear novamente. O sorteio usa o catálogo completo de jogos, independentemente dos filtros, busca e guardados. A lógica fica em sorteio.js e é carregada separadamente da interface principal. Quando há mais de uma opção, evita repetir imediatamente o mesmo jogo.
+
+## Ampliação do catálogo para 50 jogos
+
+Foram adicionados 11 títulos com fichas dinâmicas, cinco seções editoriais e referências à Steam. Os requisitos das novas fichas são preenchidos pela automação existente; as capas são importadas pelo fluxo de imagens, com endereço alternativo da Steam caso a capa local ainda não esteja disponível. O total do catálogo é calculado automaticamente, inclusive para filtros e sorteio.

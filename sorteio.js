@@ -22,7 +22,11 @@
     cover.className = "thumb";
     cover.src = game.img || "assets/" + game.s + ".jpg";
     cover.alt = "";
-    cover.addEventListener("error", function () { cover.hidden = true; });
+    let alternative = game.coverFallback;
+    cover.addEventListener("error", function () {
+      if (alternative) { cover.src = alternative; alternative = null; }
+      else cover.hidden = true;
+    });
     const info = document.createElement("div");
     const category = document.createElement("small");
     category.textContent = "Jogo sorteado · " + game.k;

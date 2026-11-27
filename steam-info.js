@@ -1293,5 +1293,115 @@ const STEAM_INFO={
     "platforms": [
       "Windows"
     ]
+  },
+  "portal": {
+    "appid": 400,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/400/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "Valve",
+    "release": "10 out. 2007"
+  },
+  "slay-the-spire": {
+    "appid": 646570,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/646570/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "Mega Crit",
+    "release": "23 jan. 2019"
+  },
+  "the-stanley-parable": {
+    "appid": 1703340,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/1703340/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "Crows Crows Crows",
+    "release": "27 abr. 2022"
+  },
+  "a-short-hike": {
+    "appid": 1055540,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/1055540/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "adamgryu",
+    "release": "30 jul. 2019"
+  },
+  "journey": {
+    "appid": 638230,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/638230/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "thatgamecompany",
+    "release": "11 jun. 2020"
+  },
+  "gris": {
+    "appid": 683320,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/683320/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "Nomada Studio",
+    "release": "13 dez. 2018"
+  },
+  "unpacking": {
+    "appid": 1135690,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/1135690/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "Witch Beam",
+    "release": "1 nov. 2021"
+  },
+  "dorfromantik": {
+    "appid": 1455840,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/1455840/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "Toukana Interactive",
+    "release": "28 abr. 2022"
+  },
+  "outer-wilds": {
+    "appid": 753640,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/753640/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "Mobius Digital",
+    "release": "18 jun. 2020"
+  },
+  "human-fall-flat": {
+    "appid": 477160,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/477160/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "No Brakes Games",
+    "release": "22 jul. 2016"
+  },
+  "dark-souls-ii": {
+    "appid": 335300,
+    "source": "Steam",
+    "url": "https://store.steampowered.com/app/335300/",
+    "min": [],
+    "rec": [],
+    "status": "aguardando importação",
+    "dev": "FromSoftware, Inc.",
+    "release": "1 abr. 2015"
   }
 };

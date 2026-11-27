@@ -1096,5 +1096,335 @@ const GAMES=[
         "<p>Skyrim Special Edition inclui a aventura de Skyrim e conteúdos adicionais em uma edição remasterizada.</p><p>Fonte: <a href='https://store.steampowered.com/app/489830/' target='_blank' rel='noopener'>página oficial na Steam</a>.</p><div class=\"research-block\"><h3>Mais curiosidades</h3><ul class=\"research-facts\"><li>O jogo original foi lançado em 2011; a Special Edition chegou em outubro de 2016.</li><li>A edição especial inclui os conteúdos adicionais do jogo original.</li><li>A comunidade de modificações é um elemento conhecido da longevidade de Skyrim, com possibilidades que variam conforme a plataforma.</li></ul></div><p class=\"research-source\"><strong>Fonte de consulta:</strong> <a href=\"https://store.steampowered.com/app/489830/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha oficial da Steam</a>. Consulta em 27 nov. 2026. Texto editorial em português.</p>"
       ]
     ]
+  },
+  {
+    "s": "portal",
+    "n": "Portal",
+    "k": "Quebra-cabeça",
+    "t": "Dois portais e uma sala cheia de possibilidades.",
+    "img": "assets/portal.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/400/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>A aventura original de Portal acompanha uma participante de testes nas instalações da Aperture Science. Cada sala apresenta um problema de lógica espacial e introduz novas regras gradualmente.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>Lançado em 2007, o jogo combina perspectiva em primeira pessoa, humor e puzzles de física. O laboratório e as falas do narrador fazem parte da narrativa.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/400/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Criar dois portais conectados em superfícies compatíveis.</li><li>Usar cubos e botões para modificar o cenário.</li><li>Aproveitar o movimento do personagem ao atravessar portais.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Observe a saída e os obstáculos antes de testar uma solução.</li><li>Identifique quais paredes permitem portais.</li><li>Experimente uma ideia por vez para entender o resultado.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>A Valve publicou Portal em 2007.</li><li>O jogo é exclusivamente individual em sua campanha original.</li><li>A sequência Portal 2 amplia os desafios e acrescenta uma campanha cooperativa.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/400/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "slay-the-spire",
+    "n": "Slay the Spire",
+    "k": "Estratégia",
+    "t": "Monte seu baralho e descubra novas combinações a cada partida.",
+    "img": "assets/slay-the-spire.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Neste jogo de estratégia, o objetivo é avançar por uma torre com encontros e decisões diferentes a cada tentativa. Cartas, energia e relíquias determinam as possibilidades de cada rodada.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>A Mega Crit combina construção de baralhos e roguelike: em vez de entregar um conjunto fixo de cartas, o jogo permite desenvolver uma estratégia durante a partida.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/646570/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Escolher cartas entre recompensas opcionais.</li><li>Gerenciar energia em cada turno.</li><li>Selecionar rotas em um mapa com diferentes tipos de encontros.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Não aceite uma carta apenas porque ela está disponível.</li><li>Procure combinações entre cartas e relíquias.</li><li>Compare os benefícios de cada caminho antes de avançar.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>Cada tentativa pode apresentar uma rota diferente.</li><li>As relíquias alteram regras e possibilidades do baralho.</li><li>A experiência é voltada a partidas individuais.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/646570/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "the-stanley-parable",
+    "n": "The Stanley Parable: Ultra Deluxe",
+    "k": "Exploração",
+    "t": "Um escritório vazio, um narrador e decisões inesperadas.",
+    "img": "assets/the-stanley-parable.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1703340/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Stanley trabalha em um escritório e percebe que seus colegas desapareceram. A exploração de corredores e salas revela diferentes possibilidades narrativas, dependendo de como o visitante interpreta as instruções.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>A edição Ultra Deluxe amplia o jogo de 2013 com ambientes, escolhas e situações adicionais. A relação entre narrador e jogador é seu principal recurso de design.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1703340/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Explorar ambientes em primeira pessoa.</li><li>Escolher diferentes caminhos durante a narrativa.</li><li>Revisitar a aventura para encontrar novas possibilidades.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Experimente caminhos diferentes sem consultar um guia de finais.</li><li>Observe o que o narrador diz e o que o ambiente permite.</li><li>Evite vídeos com revelações importantes antes de jogar.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>Ultra Deluxe é uma releitura ampliada do original de 2013.</li><li>O narrador reage às decisões do jogador.</li><li>A obra explora a própria ideia de liberdade de escolha nos jogos.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1703340/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "a-short-hike",
+    "n": "A Short Hike",
+    "k": "Exploração",
+    "t": "Uma pequena viagem por trilhas, praias e montanhas.",
+    "img": "assets/a-short-hike.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1055540/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Claire explora um parque insular enquanto tenta alcançar o ponto mais alto. O percurso é livre e oferece encontros, atividades e paisagens que podem ser descobertas no próprio ritmo.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>Criado por adamgryu, o projeto utiliza uma ilha compacta para incentivar descobertas próximas umas das outras. O tamanho do cenário favorece a exploração espontânea.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1055540/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Caminhar, escalar e planar pelo parque.</li><li>Encontrar penas douradas para ampliar as possibilidades de escalada.</li><li>Conversar com personagens e experimentar atividades opcionais.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Explore os caminhos laterais antes de seguir para o pico.</li><li>Converse com quem encontrar pelo caminho.</li><li>Use as penas douradas para alcançar áreas novas.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>Recebeu o prêmio do público no IGF de 2020.</li><li>O cenário não exige uma ordem única de exploração.</li><li>O projeto foi lançado na Steam em julho de 2019.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1055540/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "journey",
+    "n": "Journey",
+    "k": "Exploração",
+    "t": "Atravesse um deserto misterioso em uma aventura contemplativa.",
+    "img": "assets/journey.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/638230/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Um viajante percorre dunas e ruínas em direção a uma montanha distante. O significado da jornada é construído principalmente pela música, pelas imagens e pela exploração.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>Journey utiliza comunicação não verbal e uma direção artística que valoriza a escala das paisagens. A experiência pode incluir encontros com outro viajante.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/638230/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Deslizar por superfícies arenosas e planar.</li><li>Observar símbolos e elementos do cenário.</li><li>Encontrar outro viajante durante a exploração online.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Observe as mudanças de luz e a direção dos caminhos.</li><li>Explore sem pressa, pois os detalhes fazem parte da experiência.</li><li>Se encontrar outra pessoa, experimente acompanhar seu ritmo.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>A trilha sonora recebeu uma indicação ao Grammy.</li><li>É possível jogar sozinho ou com outro viajante.</li><li>A comunicação entre viajantes não depende de uma conversa por texto.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/638230/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "gris",
+    "n": "GRIS",
+    "k": "Plataforma",
+    "t": "Uma jornada artística em que o mundo ganha novas cores.",
+    "img": "assets/gris.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/683320/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Gris atravessa um universo que reflete suas emoções. A aventura mistura plataformas, pequenos enigmas e transformações visuais para contar uma história sem depender de diálogos extensos.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>O projeto da Nomada Studio usa cor, animação e música como recursos narrativos. Novas habilidades modificam a relação da personagem com os cenários.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/683320/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Explorar regiões em duas dimensões.</li><li>Descobrir habilidades ligadas ao vestido da protagonista.</li><li>Resolver enigmas e procurar desafios opcionais.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Preste atenção às pistas visuais do ambiente.</li><li>Experimente voltar a caminhos quando descobrir habilidades novas.</li><li>Reserve tempo para observar a arte e ouvir a trilha sonora.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>A edição original foi lançada em 2018.</li><li>O jogo apresenta uma experiência sem mortes tradicionais.</li><li>As mudanças de cor ajudam a construir a narrativa visual.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/683320/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "unpacking",
+    "n": "Unpacking",
+    "k": "Quebra-cabeça",
+    "t": "Organize objetos e descubra uma história através de mudanças de casa.",
+    "img": "assets/unpacking.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1135690/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Cada etapa apresenta caixas e um novo espaço doméstico. A tarefa é encontrar lugares para os objetos e perceber como pertences e ambientes revelam a trajetória de uma pessoa.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>A Witch Beam transforma a organização de ambientes em narrativa ambiental. Os objetos funcionam como pequenas pistas sobre fases da vida, sem exigir explicações longas.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1135690/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Retirar objetos de caixas.</li><li>Organizar móveis, prateleiras e outros espaços.</li><li>Interpretar a relação entre os pertences e o ambiente.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Comece por objetos grandes para liberar espaço.</li><li>Observe quais itens pertencem a cada cômodo.</li><li>Repare nos objetos que reaparecem em outras mudanças.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>A narrativa é construída com pertences pessoais e ambientes.</li><li>Não existe um cronômetro exigindo rapidez.</li><li>O jogo utiliza arte pixelada para representar detalhes dos objetos.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1135690/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "dorfromantik",
+    "n": "Dorfromantik",
+    "k": "Estratégia",
+    "t": "Construa paisagens peça por peça, juntando vilas e florestas.",
+    "img": "assets/dorfromantik.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1455840/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>O jogador posiciona peças hexagonais para formar paisagens com campos, rios, florestas e aldeias. É possível jogar de maneira tranquila ou tentar melhorar a pontuação.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>O projeto combina construção de paisagens e quebra-cabeças. A cada peça, o jogador precisa conciliar aparência, continuidade dos elementos e objetivos de pontuação.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1455840/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Girar e encaixar peças hexagonais.</li><li>Conectar elementos semelhantes da paisagem.</li><li>Completar objetivos de construção para ampliar as possibilidades.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Observe todos os lados da peça antes de colocá-la.</li><li>Deixe espaço para ampliar rios e ferrovias.</li><li>Planeje áreas maiores sem se preocupar apenas com a pontuação imediata.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>O mapa cresce peça por peça.</li><li>O jogo combina estratégia com uma apresentação contemplativa.</li><li>A versão completa chegou à Steam em 2022.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/1455840/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "outer-wilds",
+    "n": "Outer Wilds",
+    "k": "Exploração",
+    "t": "Investigue um sistema solar que guarda um mistério.",
+    "img": "assets/outer-wilds.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/753640/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>O jogador participa de um programa espacial fictício e explora planetas de um sistema solar preso em um ciclo temporal. O progresso acontece principalmente por descobertas e pela compreensão de pistas.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>Mobius Digital utiliza conhecimento como forma de progressão. O sistema solar muda durante cada ciclo, fazendo com que o momento da visita também influencie a exploração.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/753640/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Viajar entre planetas em uma nave fictícia.</li><li>Ler registros e traduzir mensagens antigas.</li><li>Consultar o diário de bordo para relacionar descobertas.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Leia os registros encontrados em vez de ignorá-los.</li><li>Consulte o diário de bordo quando não souber para onde ir.</li><li>Evite guias que revelam a solução do mistério.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>Ganhou o prêmio de melhor jogo no BAFTA Games Awards de 2020.</li><li>O lançamento original ocorreu em 2019 e a versão Steam chegou em 2020.</li><li>O conhecimento adquirido é um dos principais elementos de progressão.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/753640/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "human-fall-flat",
+    "n": "Human Fall Flat",
+    "k": "Multijogador",
+    "t": "Resolva desafios de física sozinho ou com amigos.",
+    "img": "assets/human-fall-flat.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/477160/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Human Fall Flat apresenta ambientes oníricos em que personagens desajeitados precisam interagir com objetos e encontrar caminhos. A liberdade de experimentar soluções contribui para o humor.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>O jogo de plataforma usa física simulada como base dos desafios. O comportamento dos objetos e dos personagens permite que uma mesma sala seja resolvida de maneiras diferentes.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/477160/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Controlar separadamente as mãos do personagem virtual.</li><li>Mover objetos e interagir com mecanismos de cenário.</li><li>Resolver desafios em modo individual ou cooperativo.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Experimente soluções diferentes quando um caminho não funcionar.</li><li>Em equipe, combine quem fará cada parte do desafio.</li><li>Observe o comportamento dos objetos antes de movê-los.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>A física dos personagens é uma parte importante da identidade do jogo.</li><li>As fases apresentam ambientes e caminhos variados.</li><li>O modo cooperativo permite que os participantes improvisem juntos.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/477160/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
+  },
+  {
+    "s": "dark-souls-ii",
+    "n": "Dark Souls II: Scholar of the First Sin",
+    "k": "RPG",
+    "t": "Descubra Drangleic e seus caminhos cheios de segredos.",
+    "img": "assets/dark-souls-ii.jpg",
+    "coverFallback": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/335300/header.jpg",
+    "secs": [
+      [
+        "Sobre o jogo",
+        "<p>Dark Souls II acompanha um viajante em um reino fantástico marcado por uma maldição. A exploração de Drangleic e o encontro com personagens ajudam a compreender o mundo pouco a pouco.</p>"
+      ],
+      [
+        "Contexto e design",
+        "<div class=\"research-block\"><p>Scholar of the First Sin é uma edição revisada do RPG lançado originalmente em 2014. A versão para PC de 2015 reúne conteúdos adicionais e modifica a distribuição de encontros e elementos do cenário.</p></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/335300/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ],
+      [
+        "Mecânicas",
+        "<ul><li>Explorar regiões conectadas e descobrir pontos de descanso.</li><li>Desenvolver os atributos do personagem conforme o estilo escolhido.</li><li>Usar recursos do inventário e consultar descrições de itens.</li></ul>"
+      ],
+      [
+        "Dicas",
+        "<ol><li>Converse com a Guardiã Esmeralda em Majula para conhecer a progressão do personagem.</li><li>Leia a descrição dos atributos antes de gastar pontos.</li><li>Explore no seu ritmo e faça pausas quando uma região ficar frustrante.</li></ol>"
+      ],
+      [
+        "Curiosidades",
+        "<div class=\"research-block\"><ul><li>Majula funciona como uma área central da aventura.</li><li>Scholar of the First Sin inclui os conteúdos adicionais do jogo original.</li><li>A edição altera a distribuição de encontros e o funcionamento de alguns elementos online.</li></ul></div><p class=\"research-source\">Fonte oficial: <a href=\"https://store.steampowered.com/app/335300/\" target=\"_blank\" rel=\"noopener noreferrer\">Ficha do jogo na Steam</a>. Consulta em 27 nov. 2026.</p>"
+      ]
+    ]
   }
 ];

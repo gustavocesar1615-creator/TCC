@@ -75,6 +75,17 @@ jobs:
           baixar "monster-hunter-world" "582010"
           baixar "dark-souls-iii" "374320"
           baixar "skyrim-special-edition" "489830"
+          baixar "portal" "400"
+          baixar "slay-the-spire" "646570"
+          baixar "the-stanley-parable" "1703340"
+          baixar "a-short-hike" "1055540"
+          baixar "journey" "638230"
+          baixar "gris" "683320"
+          baixar "unpacking" "1135690"
+          baixar "dorfromantik" "1455840"
+          baixar "outer-wilds" "753640"
+          baixar "human-fall-flat" "477160"
+          baixar "dark-souls-ii" "335300"
       - name: Salvar imagens no repositorio
         shell: bash
         run: |

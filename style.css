@@ -147,3 +147,8 @@ footer{text-align:center;color:var(--mu);padding:24px;border-top:1px solid #2326
 .gloss-single .gloss-term h2{font-size:1.35rem}
 .gloss-single .gloss-example{margin-top:16px;padding-top:12px;border-top:1px solid #30343e}
 .gloss-permalink[hidden],#gloss-count[hidden]{display:none}
+
+/* Links de leitura complementar do glossário */
+.gloss-term-links{display:flex;flex-wrap:wrap;gap:5px 14px;align-items:center;margin-top:10px}
+.gloss-source{color:var(--c);font-size:.8rem;text-decoration:underline;text-underline-offset:3px}
+.gloss-source:hover{color:var(--tx)}

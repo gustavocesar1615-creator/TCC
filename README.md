@@ -85,3 +85,7 @@ Testar em navegador: salvar notas diferentes em duas fichas, recarregar, marcar/
 ## Glossário gamer
 
 A página glossario.html contém 52 termos em português, organizados em 5 assuntos e ordem alfabética, com exemplos e links para fichas do catálogo. O glossario.js indexa o texto já presente no HTML para busca por palavras sem distinção de acentos e maiúsculas; assunto e letra inicial podem ser combinados. As definições permanecem disponíveis mesmo sem JavaScript. Cada termo possui um endereço individual (glossario.html?termo=identificador#termo-identificador), que abre somente a definição selecionada e oferece retorno ao glossário completo. A âncora continua funcionando sem JavaScript. Para acrescentar um termo, adicione um article.gloss-term com id único, data-category e data-letter, título, definição e exemplo. Os filtros são derivados desses elementos. Se um novo assunto for usado, adicione sua opção ao select gloss-category.
+
+### Leitura complementar
+
+Os 52 termos oferecem acesso a uma referência externa em português: o glossário da exposição Game+ do Itaú Cultural (https://www.itaucultural.org.br/secoes/noticias/conheca-o-jogabulario-da-exposicao-game) ou o dicionário de videogames da Tangerina/UOL (https://tangerina.uol.com.br/games/dicionario-videogames/), consultados em 27 nov. 2026. São links para glossários completos, não para verbetes individuais; a cobertura varia conforme o termo. Os links abrem em nova aba e permanecem disponíveis na definição individual.

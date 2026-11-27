@@ -81,3 +81,7 @@ Foram adicionados 11 títulos com fichas dinâmicas, cinco seções editoriais e
 O arquivo guia.js acrescenta um caderno de anotações independente por jogo (até 2000 caracteres), marcações manuais de leitura e links diretos por parâmetro secao. O progresso e a última aba ficam no localStorage, separados por identificador do jogo. A aba indicada no link tem prioridade sobre a última visitada. O evento gametips:tabchange é emitido pelas abas tanto no clique quanto pelo teclado. A Clipboard API copia o link, com campo alternativo para cópia manual. Dados locais, apagáveis e sem sincronização entre aparelhos.
 
 Testar em navegador: salvar notas diferentes em duas fichas, recarregar, marcar/desmarcar abas, testar setas, abrir link com secao=dicas, voltar à última aba, copiar link e limpar progresso e anotação independentemente.
+
+## Glossário gamer
+
+A página glossario.html contém 52 termos em português, organizados em 5 assuntos e ordem alfabética, com exemplos e links para fichas do catálogo. O glossario.js indexa o texto já presente no HTML para busca por palavras sem distinção de acentos e maiúsculas; assunto e letra inicial podem ser combinados. As definições permanecem disponíveis mesmo sem JavaScript. Cada termo possui um endereço com âncora para compartilhamento. Para acrescentar um termo, adicione um article.gloss-term com id único, data-category e data-letter, título, definição e exemplo. Os filtros são derivados desses elementos. Se um novo assunto for usado, adicione sua opção ao select gloss-category.

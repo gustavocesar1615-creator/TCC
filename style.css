@@ -78,3 +78,13 @@ footer{text-align:center;color:var(--mu);padding:24px;border-top:1px solid #2326
 .tabs{scroll-margin-top:120px}
 @media(max-width:780px){.discover-list{grid-template-columns:1fr}.discover-item{flex-direction:row;align-items:center}.discover-item .thumb{width:118px;height:100%;min-height:105px;align-self:stretch;flex-shrink:0}.discover-item>div:not(.thumb){flex:1}}
 @media(max-width:380px){.discover-item .thumb{width:90px}.catalog-options{gap:6px}}
+
+/* Resultado do sorteio */
+.random-result{width:100%;max-width:460px;color:var(--mu);font-size:.92rem}
+.random-result:empty{display:none}
+.random-pick{display:flex;align-items:center;gap:12px;text-decoration:none;background:var(--card);border:1px solid #3a3e48;border-left:3px solid var(--c);border-radius:8px;overflow:hidden;color:var(--tx)}
+.random-pick:hover{border-color:var(--c)}
+.random-pick .thumb{width:115px;height:92px;flex-shrink:0}
+.random-pick>div:not(.thumb){padding:8px 10px 8px 0;min-width:0;overflow-wrap:anywhere}
+.random-pick small,.random-pick strong,.random-pick span{display:block}
+.random-pick small{color:var(--mu)}.random-pick span{color:var(--c);font-size:.85rem}

@@ -112,11 +112,19 @@ function drawRecent() {
     thumb(game) + '<span>' + esc(game.n) + '</span></a>').join("");
 }
 
+function pickGame(list, previous, random = Math.random) {
+  if (!list.length) return null;
+  const alternatives = list.filter(game => game.s !== previous);
+  const pool = alternatives.length ? alternatives : list;
+  return pool[Math.floor(random() * pool.length)];
+}
+
 function home() {
   const cats = [...new Set(GAMES.map(game => game.k))].sort();
   const chips = $("#chips"), busca = $("#busca"), grid = $("#grid");
   const savedFilter = $("#saved-filter"), order = $("#game-sort"), random = $("#random-game");
-  let cat = "Todos", savedOnly = false, visible = [];
+  const result = $("#random-result");
+  let cat = "Todos", savedOnly = false, lastChoice = null;
   drawDiscovery();
   drawRecent();
   $("#clear-recent").addEventListener("click", () => { writeLibrary("recent", []); drawRecent(); });
@@ -128,10 +136,12 @@ function home() {
 
   function draw() {
     const lista = catalogGames(cat, busca.value, savedOnly, order.value);
-    visible = lista;
+    lastChoice = null;
+    if (result) result.replaceChildren();
+    random.textContent = "Escolher um jogo por mim";
     savedFilter.textContent = "Guardados (" + readLibrary("saved").length + ")";
     savedFilter.setAttribute("aria-pressed", String(savedOnly));
-    random.disabled = lista.length === 0;
+    random.disabled = false;
     $("#cont").textContent = "Mostrando " + lista.length + " de " + GAMES.length + " jogos";
     grid.innerHTML = lista.map(game =>
       '<a class="card" style="--c:' + cor(game) + '" href="' + gameUrl(game) + '">' + thumb(game) +
@@ -143,7 +153,19 @@ function home() {
   order.addEventListener("change", draw);
   savedFilter.addEventListener("click", () => { savedOnly = !savedOnly; draw(); });
   random.addEventListener("click", () => {
-    if (visible.length) location.href = gameUrl(visible[Math.floor(Math.random() * visible.length)]);
+    const candidates = catalogGames(cat, busca.value, savedOnly, order.value);
+    const chosen = pickGame(candidates, lastChoice);
+    if (!chosen) {
+      if (result) result.textContent = "Nenhum jogo corresponde aos filtros atuais. Altere a busca ou os filtros para sortear.";
+      return;
+    }
+    lastChoice = chosen.s;
+    // Mostra o resultado antes de navegar; o visitante pode sortear novamente.
+    if (!result) { location.href = gameUrl(chosen); return; }
+    result.innerHTML = '<a class="random-pick" href="' + gameUrl(chosen) + '">' + thumb(chosen) +
+      '<div><small>Jogo sorteado · ' + esc(chosen.k) + '</small><strong>' + esc(chosen.n) +
+      '</strong><span>Ver dicas →</span></div></a>';
+    random.textContent = "Sortear outro jogo";
   });
   chips.addEventListener("click", event => {
     const button = event.target.closest(".chip");

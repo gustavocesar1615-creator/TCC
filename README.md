@@ -1,0 +1,59 @@
+# GameTips
+
+Projeto de Trabalho de Conclusão de Curso (TCC): catálogo web de orientações sobre jogos digitais, destinado principalmente a jogadores iniciantes, com explicações sem spoilers importantes.
+
+## Funcionalidades
+
+- Catálogo com busca por nome (sem distinção de acentos e maiúsculas) e filtros por gênero.
+- Fichas com dicas, mecânicas, informações e curiosidades, conforme o conteúdo de cada jogo.
+- Requisitos de PC e metadados da Steam; Fortnite utiliza informações da Epic Games.
+- Sugestões de jogos semelhantes, imagens com alternativa em caso de falha e interface responsiva.
+- Navegação por teclado nas abas e indicação da categoria selecionada.
+
+## Estrutura
+
+| Arquivo | Responsabilidade |
+| --- | --- |
+| index.html | Página inicial e seção sobre o projeto |
+| jogo.html | Ficha dinâmica, recebe o parâmetro j na URL |
+| games.js | Dados editoriais, categorias, imagens e informações do TCC |
+| steam-info.js | Dados de lojas e requisitos de PC |
+| site.js | Renderização, busca, filtros, fichas e rodapé |
+| script.js | Comportamento compartilhado das abas, inclusive nas fichas antigas |
+| style.css | Estilos, responsividade e compatibilidade |
+| assets/ | Capas dos jogos |
+| .github/scripts/importar-steam.py | Importação de dados da Steam |
+| .github/workflows/ | Automações de dados e capas |
+
+As páginas HTML antigas foram preservadas para manter os endereços existentes e seu conteúdo. Novos jogos devem usar a ficha dinâmica. Não é necessário servidor de aplicação, banco de dados ou autenticação.
+
+## Executar localmente
+
+1. Clone o repositório ou faça download do ZIP.
+2. Na pasta do projeto, execute `python -m http.server 8000` (ou `python3 -m http.server 8000`).
+3. Abra http://localhost:8000 no navegador.
+
+## Como cadastrar ou editar um jogo
+
+Edite o array GAMES em games.js. Cada item usa s (identificador único), n (nome), k (categoria), t (resumo), img (capa opcional), tag e sub (opcionais) e secs (pares de título e HTML editorial). A capa padrão é assets/<identificador>.jpg. A ficha é acessada por jogo.html?j=<identificador>. Adicione os dados da loja em steam-info.js quando disponíveis. Use apenas fontes verificáveis e não introduza HTML de visitantes nas seções.
+
+## Atualização de dados
+
+Na aba Actions do GitHub, os fluxos "Atualizar dados Steam do GameTips" e "Importar capas do GameTips" podem ser iniciados manualmente. Eles também são acionados por alterações nos respectivos arquivos de automação. O fluxo da Steam lê os identificadores já cadastrados em steam-info.js; o de capas usa uma lista de jogos definida no próprio workflow. As mudanças são gravadas no repositório quando houver diferenças. As informações não são consultadas em tempo real pelo visitante. Fortnite não usa a Steam.
+
+## Publicação
+
+O projeto pode ser servido pelo GitHub Pages a partir da raiz da branch main, conforme a configuração de Pages do repositório.
+
+## Verificação antes da entrega
+
+- Abrir o catálogo, testar busca por nome, acentos, filtros e busca sem resultado.
+- Abrir uma ficha dinâmica e uma ficha antiga; trocar abas por clique e teclado (setas, Home e End).
+- Verificar requisitos da Steam e da Epic Games, links de fontes, imagens e URL inválida.
+- Conferir o layout em celular e computador.
+- Completar informações acadêmicas, justificativa, relatos pessoais e referências reais; não inventar dados ou experiências.
+- Registrar os resultados de testes no relatório acadêmico.
+
+## Créditos
+
+Nomes e imagens dos jogos pertencem aos seus respectivos titulares. Consulte as fontes oficiais indicadas nas fichas. Este projeto tem finalidade acadêmica.

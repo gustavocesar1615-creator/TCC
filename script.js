@@ -59,4 +59,16 @@
   }
   window.GameTipsTabs = { init };
   init();
+  // Mantém os links antigos e oferece acesso às fichas ampliadas.
+  const legacyPage = location.pathname.split("/").pop();
+  const legacySlug = legacyPage && legacyPage.endsWith(".html") ? legacyPage.slice(0, -5) : "";
+  if (legacySlug && legacySlug !== "index" && legacySlug !== "jogo" && document.querySelector(".tabs")) {
+    const link = document.createElement("a");
+    link.className = "back";
+    link.href = "jogo.html?j=" + encodeURIComponent(legacySlug);
+    link.textContent = "Ver ficha ampliada, curiosidades e requisitos →";
+    const p = document.createElement("p");
+    p.append(link);
+    document.querySelector(".tabs").before(p);
+  }
 })();

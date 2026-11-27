@@ -94,7 +94,7 @@ function steamTab(game) {
   const field = (name, value) => value && (!Array.isArray(value) || value.length)
     ? "<p><b>" + name + ":</b> " + esc(Array.isArray(value) ? value.join(", ") : value) + "</p>" : "";
   const details = field("Desenvolvimento", data.dev) + field("Publicação", data.publisher) +
-    field("Lançamento na loja", data.release) + field("Gêneros", data.genres) + field("Plataformas", data.platforms);
+    field("Data informada na loja", data.release) + field("Gêneros", data.genres) + field("Plataformas", data.platforms);
   const note = data.source === "Epic Games"
     ? "<p>Fortnite não tem página na Steam. Os requisitos abaixo são da Epic Games.</p>"
     : "<p>Informações e requisitos oficiais para PC (Windows), quando fornecidos pela Steam.</p>";
@@ -103,7 +103,7 @@ function steamTab(game) {
   const url = /^https:\/\/(store\.steampowered\.com|www\.epicgames\.com)\//.test(data.url || "") ? data.url : "";
   const source = url ? "<p>Fonte: <a target='_blank' rel='noopener noreferrer' href='" + esc(url) + "'>" +
     esc(data.source || "Página oficial") + " ↗</a></p>" : "";
-  return note + status + details + "<h3>Requisitos mínimos para PC</h3>" + list(data.min) +
+  return note + status + details + "<p class='muted'>A data exibida pode corresponder à edição para PC ou à versão cadastrada na loja, e não ao lançamento original.</p><h3>Requisitos mínimos para PC</h3>" + list(data.min) +
     "<h3>Requisitos recomendados para PC</h3>" + list(data.rec) + source;
 }
 

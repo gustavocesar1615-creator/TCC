@@ -57,3 +57,7 @@ O projeto pode ser servido pelo GitHub Pages a partir da raiz da branch main, co
 ## Créditos
 
 Nomes e imagens dos jogos pertencem aos seus respectivos titulares. Consulte as fontes oficiais indicadas nas fichas. Este projeto tem finalidade acadêmica.
+
+## Pesquisa editorial das fichas (27/11/2026)
+
+Os 39 jogos receberam uma seção "Contexto e design" e três novas curiosidades em "Curiosidades". As informações são apresentadas em português, com referências de consulta da Steam e, quando aplicável, dos desenvolvedores ou publishers. O texto contextualiza design, história da produção, versões, acessibilidade e aspectos técnicos, evitando spoilers importantes. As fontes são indicações para conferência e não autorização de reprodução de imagens; mantenha a atribuição e confirme direitos de uso antes de incorporar capturas. A data de uma ficha de loja pode se referir à edição de PC ou a uma versão específica. As fichas antigas continuam disponíveis e oferecem um link para a ficha ampliada.
